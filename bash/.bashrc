@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-###########
-if [ -f $HOME/.config/bash/init.bash ]; then
-    source $HOME/.config/bash/init.bash
-fi
+# Source all bash files
+for f in ~/.config/bash/*; do
+    source $f
+done

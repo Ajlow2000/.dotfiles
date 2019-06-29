@@ -1,6 +1,5 @@
-if [ -f $HOME/.config/bash/shortcuts.bash ]; then
-    source $HOME/.config/bash/shortcuts.bash
-fi
+# print TODO.sh upon launch
+TODO.sh
 
 # Add all directories in $HOME/.local/bin/ to PATH
 for d in $HOME/.local/bin/*; do
