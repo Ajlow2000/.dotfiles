@@ -12,6 +12,7 @@
 " #############################################################################
 
 " set relative line numbers
+set number
 set relativenumber
 
 " highlight matching brackets
