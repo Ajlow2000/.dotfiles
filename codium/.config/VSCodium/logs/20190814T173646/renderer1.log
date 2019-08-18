@@ -1,0 +1,7 @@
+[2019-08-14 17:37:41.377] [renderer1] [error] Invalid guestInstanceId: null: Error: Invalid guestInstanceId: null
+    at Object.getGuestForWebContents (/usr/share/codium/resources/electron.asar/browser/guest-view-manager.js:425:11)
+    at /usr/share/codium/resources/electron.asar/browser/rpc-server.js:444:34
+    at EventEmitter.ipcMain.on.args (/usr/share/codium/resources/electron.asar/browser/rpc-server.js:273:21)
+    at EventEmitter.emit (events.js:182:13)
+    at WebContents.<anonymous> (/usr/share/codium/resources/electron.asar/browser/api/web-contents.js:368:21)
+    at WebContents.emit (events.js:182:13)
