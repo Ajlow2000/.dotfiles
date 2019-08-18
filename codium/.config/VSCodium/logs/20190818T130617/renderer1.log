@@ -1,0 +1,10 @@
+[2019-08-18 16:08:02.714] [renderer1] [error] Tree element not found: [object Object]: Error: Tree element not found: [object Object]
+    at s.getElementLocation (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:98:403)
+    at s.isCollapsed (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:97:700)
+    at q.isCollapsed (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:962:992)
+    at W.revealMarkersForCurrentActiveEditor (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:5606:566)
+    at W.autoReveal (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:5606:423)
+    at W.onActiveEditorChanged (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:5603:775)
+    at W._register.e (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:5602:789)
+    at d.fire (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:81:87)
+    at setTimeout (file:///usr/share/codium/resources/app/out/vs/workbench/workbench.main.js:77:544)

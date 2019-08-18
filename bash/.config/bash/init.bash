@@ -1,8 +1,5 @@
 # Add all directories in $HOME/.local/bin/ to PATH
-PATH+=":$HOME/.local/bin/"
-for d in $HOME/.local/bin/*; do
-	PATH+=":$d"
-done
+PATH="${PATH}$(find ~/.local/bin/ -name '.*' -prune -o -type d -printf ':%p')"
 
-# print TODO.sh upon launch
+# print todo.sh upon launch
 $HOME/.local/bin/TODO.sh

@@ -1,7 +1,9 @@
 {
     "telemetry.machineId": "91fc89bbcbaaa59d289a175cff99eab4a57b61dbc53b608d59d254860bb4c4da",
     "openedPathsList": {
-        "workspaces3": [],
+        "workspaces3": [
+            "file:///home/ajlow/Projects/unix-tailor"
+        ],
         "files2": []
     },
     "lastKnownMenubarData": {
@@ -39,6 +41,21 @@
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
                                     "label": "&&Reopen Closed Editor"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "fsPath": "/home/ajlow/Projects/unix-tailor",
+                                        "external": "file:///home/ajlow/Projects/unix-tailor",
+                                        "path": "/home/ajlow/Projects/unix-tailor",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Projects/unix-tailor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -152,8 +169,7 @@
                     },
                     {
                         "id": "workbench.action.closeFolder",
-                        "label": "Close &&Folder",
-                        "enabled": false
+                        "label": "Close &&Folder"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -342,7 +358,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -526,8 +543,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -536,8 +552,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -809,8 +824,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1365,10 +1379,11 @@
     "pickerWorkingDir": "/home/ajlow/Projects",
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/ajlow/.config/VSCodium/Backups/1566098344337",
+            "folder": "file:///home/ajlow/Projects/unix-tailor",
+            "backupPath": "/home/ajlow/.config/VSCodium/Backups/240b94804ba4c4114e81eb0e3e9a3c61",
             "uiState": {
                 "mode": 1,
-                "x": 966,
+                "x": 13,
                 "y": 13,
                 "width": 941,
                 "height": 1014
