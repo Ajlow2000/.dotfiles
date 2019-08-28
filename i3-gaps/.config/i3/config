@@ -17,7 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -253,10 +253,6 @@ hide_edge_borders both
 
 # Start Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Start the gnome settings daemon to configure look and feel
-# I don't think this does anything since I removed the window bars
-#exec --no-startup-id gnome-settings-daemon
 
 # Start compton
 exec compton
