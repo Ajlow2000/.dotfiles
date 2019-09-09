@@ -1,0 +1,7 @@
+neovim:apt
+firefox:apt
+git:apt
+stow:apt
+tree:apt
+htop:apt
+ranger:apt
