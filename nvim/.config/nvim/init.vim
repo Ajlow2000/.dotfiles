@@ -25,7 +25,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set nojoinspaces
 
 " Sets syntax highlighting
-" syntax on
+syntax on
 
 " #############################################################################
 " ##### TAB Behaviour #########################################################
