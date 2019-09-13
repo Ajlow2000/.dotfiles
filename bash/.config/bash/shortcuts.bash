@@ -5,6 +5,7 @@ function cs() {
     ls
 }
 
-alias frak="fortune"
-
 alias pls="sudo !!"
+
+alias powershell="pwsh"
+
