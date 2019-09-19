@@ -9,3 +9,4 @@ alias pls="sudo !!"
 
 alias powershell="pwsh"
 
+alias grep='grep --color=auto'
