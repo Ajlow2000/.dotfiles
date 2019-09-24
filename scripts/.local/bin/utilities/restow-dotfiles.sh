@@ -12,7 +12,7 @@ cd .dotfiles
 
 # Stow new dotfiles
 for d in $HOME/.dotfiles/*; do
-    if [ $d == "README.md" ]; then
+    if [ $d == "$HOME/.dotfiles/README.md" ]; then
         continue
     else
         d=${d/"$HOME/.dotfiles/"/""}
