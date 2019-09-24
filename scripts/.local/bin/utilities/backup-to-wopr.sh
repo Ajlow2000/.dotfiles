@@ -5,25 +5,23 @@
 
 hostHOME=$HOME
 hostUSER=$USER
+hostHOSTNAME="$(hostname)"
+
+
+ssh server@wopr 'bash -s' << EOF
 
 # Check if a backup folder has been created
-ssh server@wopr
-if [ ! -d /home/server/backups/$hostUSER ]; then
-    mkdir -p /home/server/backups/$hostUSER
+if [ ! -d /home/server/backups/"$hostUSER@$hostHOSTNAME" ]; then
+    mkdir -p /home/server/backups/"$hostUSER@$hostHOSTNAME"
 fi
-
-# Check if backup log exists.
-backupLog=/home/server/backups/backups.log
-if [ ! -f $backupLog]; then
-    touch $backupLog
-fi
-
-# Update log
-date >> $backupLog
-echo "Updated $hostUser backup of home directory" >> $backupLog
 
 exit
 
+EOF
+
+
 ##### Back to host machine
 
-scp -r $HOME/ server@wopr:/home/server/backups/$hostUSER
+rsync -av --exclude=".*" $HOME/* server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
+rsync -av $HOME/.dotfiles server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
+rsync -av $HOME/.config server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
