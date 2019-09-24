@@ -16,7 +16,7 @@ for d in $HOME/.dotfiles/*; do
         continue
     else
         d=${d/"$HOME/.dotfiles/"/""}
-        echo $d
+        echo "Stowed: $d"
         stow $d
     fi
 done
