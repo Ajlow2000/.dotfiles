@@ -14,6 +14,8 @@ for d in $HOME/.dotfiles/*; do
     if [ $d == "README.md" ]; then
         continue
     else
+        d=${d/%?/}
+        echo $d
         stow $d
     fi
 done
