@@ -8,13 +8,14 @@ githubLink=https://github.com/Ajlow2000/.dotfiles.git
 rm -rf $HOME/.dotfiles
 cd $HOME
 git clone $githubLink
+cd .dotfiles
 
 # Stow new dotfiles
 for d in $HOME/.dotfiles/*; do
     if [ $d == "README.md" ]; then
         continue
     else
-        d=${d/%?/}
+        d=${d/"$HOME/.dotfiles/"/""}
         echo $d
         stow $d
     fi
