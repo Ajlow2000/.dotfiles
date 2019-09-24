@@ -10,3 +10,5 @@ alias pls="sudo !!"
 alias powershell="pwsh"
 
 alias grep='grep --color=auto'
+
+alias rsync='rsync --info=progress2'
