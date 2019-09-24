@@ -6,6 +6,8 @@ githubLink=https://github.com/Ajlow2000/.dotfiles.git
 
 # Wipe and reclone
 rm -rf $HOME/.dotfiles
+rm $HOME/.bashrc
+rm $HOME/.bash_logout
 cd $HOME
 git clone $githubLink
 cd .dotfiles
