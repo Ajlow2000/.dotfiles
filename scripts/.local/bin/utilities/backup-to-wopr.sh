@@ -22,6 +22,6 @@ EOF
 
 ##### Back to host machine
 
-rsync -av --exclude=".*" $HOME/* server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
-rsync -av $HOME/.dotfiles server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
-rsync -av $HOME/.config server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
+rsync -av --info=progress2 --exclude=".*" $HOME/* server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
+rsync -av --info=progress2 $HOME/.dotfiles server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
+rsync -av --info=progress2 $HOME/.config server@wopr:/home/server/backups/"$hostUSER@$hostHOSTNAME"/
