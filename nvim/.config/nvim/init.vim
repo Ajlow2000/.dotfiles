@@ -6,10 +6,47 @@
 " |_| \_|\___|\___/ \_/ |_|_| |_| |_|  \____\___/|_| |_|_| |_|\__, |
 "                                                             |___/ 
 "  ##################################################################
-"  
+
+" #############################################################################
+" ##### VimPlug ###############################################################
+" ############################################################################# 
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'                   " Basics
+Plug 'dracula/vim', { 'as': 'dracula' }     " Colorscheme
+Plug 'kien/rainbow_parentheses.vim'         " Color bracket pairs
+Plug 'vim-airline/vim-airline'              " Status Line
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'                  " File Exploring Tree
+Plug 'scrooloose/nerdcommenter'             " Block Commenting
+" Plug 'davidhalter/jedi-vim'
+Plug 'zacharied/lc3.vim'                    " LC3 Language Support
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
 " #############################################################################
 " ##### Miscellaneous #########################################################
 " #############################################################################
+
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" NERDTree Hotkey
+map <C-n> :NERDTreeToggle<CR>
+
+" Close vim if NERDTree is the only open window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Start NERDTree automatically when using nvim to open a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " set relative line numbers
 set number
@@ -44,7 +81,7 @@ set shiftwidth=0
 " round indendtation to multiples of 'shiftwidth' when shifting text
 set shiftround
 
-" if set, only inset spaces; otherwise insert \t and complete with spaces
+" if set, only insert spaces; otherwise insert \t and complete with spaces
 set expandtab
 
 " set reproduce the indentation of the previous line
@@ -55,3 +92,16 @@ set smartindent
 
 " use language specific plugins for indenting 
 filetype plugin indent on
+
+" #############################################################################
+" ##### Visuals ###############################################################
+" #############################################################################
+
+" Set colorscheme
+colorscheme dracula
+
+" Transparency
+hi Normal guibg=NONE ctermbg=NONE
+
+" Status Line theme
+let g:airline_theme='dracula'
