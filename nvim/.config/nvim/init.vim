@@ -9,7 +9,7 @@
 
 " #############################################################################
 " ##### VimPlug ###############################################################
-" ############################################################################# 
+" #############################################################################
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.local/share/nvim/plugged')
@@ -22,8 +22,13 @@ Plug 'vim-airline/vim-airline'              " Status Line
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'                  " File Exploring Tree
 Plug 'scrooloose/nerdcommenter'             " Block Commenting
-" Plug 'davidhalter/jedi-vim'
-Plug 'zacharied/lc3.vim'                    " LC3 Language Support
+Plug 'Yggdroot/indentLine'                  " Show indentation levels
+Plug 'ntpeters/vim-better-whitespace'       " Highlights and strips whitespace
+
+" ##### Language Support #####
+Plug 'plasticboy/vim-markdown'              " Markdown Syntax
+Plug 'zacharied/lc3.vim'                    " LC3 Syntax
+" Plug 'davidhalter/jedi-vim'                 " Python Autocompletion
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -31,6 +36,16 @@ call plug#end()
 " #############################################################################
 " ##### Miscellaneous #########################################################
 " #############################################################################
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
 
 " Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -75,7 +90,7 @@ set tabstop=4
 " (0 for 'tabstop', -1 for 'shiftwidth')
 set softtabstop=0
 
-" length to use when shifting text 
+" length to use when shifting text
 set shiftwidth=0
 
 " round indendtation to multiples of 'shiftwidth' when shifting text
@@ -90,8 +105,11 @@ set autoindent
 " increase indent level after '{', decrease after '}'
 set smartindent
 
-" use language specific plugins for indenting 
+" use language specific plugins for indenting
 filetype plugin indent on
+
+" allow plugins to use filetype specific info
+filetype plugin on
 
 " #############################################################################
 " ##### Visuals ###############################################################
@@ -105,3 +123,6 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Status Line theme
 let g:airline_theme='dracula'
+
+" Highlight indent chars with colorscheme
+let g:indentLine_setColors = 0
