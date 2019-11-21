@@ -77,6 +77,15 @@ set relativenumber
 " highlight matching brackets
 set showmatch
 
+" natural splitting
+set splitbelow splitright
+
+" split shortcuts
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " disable auto commenting on newlines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
