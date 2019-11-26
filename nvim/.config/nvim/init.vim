@@ -131,8 +131,6 @@ filetype plugin on
 " ##### Visuals ###############################################################
 " #############################################################################
 
-" Set colorscheme
-colorscheme dracula
 
 " Transparency
 hi Normal guibg=NONE ctermbg=NONE
@@ -142,3 +140,13 @@ let g:airline_theme='dracula'
 
 " Highlight indent chars with colorscheme
 let g:indentLine_setColors = 0
+
+" Set colorscheme
+colorscheme dracula
+
+" Include bold/italic/underline/inverse attributes in highlighting
+let g:dracula_bold = 1
+let g:dracula_italic = 1
+let g:dracula_underline = 1
+let g:dracula_inverse = 1
+let g:dracula_colorterm = 1
