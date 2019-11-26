@@ -8,6 +8,4 @@ They are organized for easy deployment with the use of a program called [stow](h
 * Bash
 * Vim (Neovim)
 * i3-gaps
-* Polybar
-* libreoffice
-* Blender
+* Awesome WM
