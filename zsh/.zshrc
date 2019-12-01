@@ -23,8 +23,23 @@ zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 # Prompt
+# TODO
 
-# Source all posix shortcuts
+##### Zplug
+#zplug "dracula/zsh",as:theme
+
+# Install plugins if there are plugins that have not been installed
+#if ! zplug check --verbose; then
+#    printf "Install? [y/N]: "
+#    if read -q; then
+#        echo; zplug install
+#    fi
+#fi
+
+# Source the plguins and add commands to $PATH
+#zplug load
+
+###### Source all posix shortcuts
 for f in ~/.config/posix/*; do
     source $f
 done
