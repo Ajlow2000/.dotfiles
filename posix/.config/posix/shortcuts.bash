@@ -8,3 +8,6 @@ function cs() {
 alias pls="sudo !!"
 
 alias grep='grep --color=auto'
+
+# Source rc file regardless of shell
+#alias sourcesh='source .($SHELL)rc' # TODO
