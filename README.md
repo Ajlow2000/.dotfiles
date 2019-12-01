@@ -4,8 +4,9 @@ They are organized for easy deployment with the use of a program called [stow](h
 
 
 ## Programs with corresponding dotfiles:
-* Local Scripts (~/.local/bin/)
+* Local Scripts (~/.local/scripts/)
+* Zsh
 * Bash
-* Vim (Neovim)
+* Posix (A generalized place for shortcuts that work with any posix compliant shell)
+* Neovim
 * i3-gaps
-* Awesome WM

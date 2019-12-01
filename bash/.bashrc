@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Source all bash files
-for f in ~/.config/bash/*; do
+# Source all posix shortcuts
+for f in ~/.config/posix/*; do
     source $f
 done

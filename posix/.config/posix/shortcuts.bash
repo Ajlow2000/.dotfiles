@@ -7,8 +7,4 @@ function cs() {
 
 alias pls="sudo !!"
 
-alias powershell="pwsh"
-
 alias grep='grep --color=auto'
-
-alias pennsim='java -jar $HOME/Documents/wisc/ece252/pennSimm/PennSim.jar'
