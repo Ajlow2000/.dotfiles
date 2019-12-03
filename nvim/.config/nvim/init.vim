@@ -24,6 +24,7 @@ Plug 'scrooloose/nerdtree'                  " File Exploring Tree
 Plug 'scrooloose/nerdcommenter'             " Block Commenting
 Plug 'Yggdroot/indentLine'                  " Show indentation levels
 Plug 'ntpeters/vim-better-whitespace'       " Highlights and strips whitespace
+" Plug 'coldfix/hexHighlight'                 " Highlight hex color codes
 
 " ##### Language Support #####
 Plug 'plasticboy/vim-markdown'              " Markdown Syntax
