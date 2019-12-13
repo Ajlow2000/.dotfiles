@@ -4,13 +4,14 @@ set $BG "$HOME/media/wallpaper/space-01.jpg"
 set $TERMINAL "konsole"
 set $BROWSER "firefox"
 set $TEDITOR "nvim"
-set $GEDITOR "code"
+set $GEDITOR "codium"
 ################
+
 # Set bg
 exec --no-startup-id feh --bg-fill $HOME/media/wallpaper/space-01.jpg
 
 # Start Polybar
-exec --no-startup-id ./polybar.sh
+exec $HOME/.config/polybar/start-polybar.sh
 
 # Sets font for title bars and status bar unless otherwise specified
 font pango:sans-serif 8
@@ -20,7 +21,7 @@ font pango:sans-serif 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/i3/lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/i3/lock.sh
 
 # Lock screen manually
 #bindsym $mod+ctrl+l exec --no-startup-id sleep 1 && xset dpms force suspend
@@ -48,6 +49,9 @@ bindsym $mod+Return exec $TERMINAL
 
 # start a browser
 bindsym $mod+Shift+Return exec $BROWSER
+
+# start codium
+bindsym $mod+c exec $GEDITOR
 
 # kill focused window
 bindsym $mod+Shift+q kill

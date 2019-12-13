@@ -13,6 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Prompt
+autoload -U colors && colors
+PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+
 # Git Integration
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }

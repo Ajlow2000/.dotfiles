@@ -1,3 +1,9 @@
+# Shortcuts
+alias e="nvim"
+alias r="ranger"
+alias p="python3"
+
+# Some gerneral settings
 alias ls="ls --group-directories-first --color"
 alias grep='grep --color=auto'
 
