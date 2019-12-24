@@ -1,0 +1,49 @@
+# ---- Basics ----- #
+
+# Terminal
+super + Return
+    $TERMINAL
+
+# Browser
+super + shift + Return
+    $BROWSER
+
+# Open nmtui
+super + n
+    $TERMINAL -e nmtui
+
+# Open python term
+super + p
+    $TERMINAL -e python
+
+# Kill focused container
+super + shift + q
+    bspc node -k
+
+# Reload sxhkd
+super + shift + r
+    pkill -USR1 -c sxhkd
+
+# ----- Navigation -----#
+
+# Walk through desktops (next)
+alt + tab
+    bspc desktop -f next
+
+# Walk through desktops (next)
+alt + shift + tab
+    bspc desktop -f last
+
+# ----- Media ----- #
+
+XF86AudioMute
+    amixer sset Master toggle
+
+XF86Audio{Raise,Lower}Volume
+    amixer sset Master 5%{+,-}
+
+XF86MonBrightnessUp
+    xbacklight -inc 15
+
+XF86MonBrightnessDown
+    xbacklight -dec 15

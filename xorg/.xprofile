@@ -1,0 +1,5 @@
+# X profile that loads when logging into a graphical X session
+#   Scripts located in $HOME/.local/scripts/utils
+
+sh ~/fehbg              # Change wallpaper by running "feh --bg-fill ~/PATH/TO/IMAGE"
+sxhkd -m 1              # Bind keys with sxhkd

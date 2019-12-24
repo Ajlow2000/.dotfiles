@@ -45,7 +45,7 @@ bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $TERMINAL
+#bindsym $mod+Return exec $TERMINAL
 
 # start a browser
 bindsym $mod+Shift+Return exec $BROWSER

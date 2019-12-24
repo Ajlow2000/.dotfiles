@@ -2,6 +2,7 @@
 
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
 bspc rule -r "*"
+sxhkd &
 
 # We look for a non-laptop monitor to use for default, but use the laptop
 # screen (LVDS) if there's nothing else. This is because I assume that if you
