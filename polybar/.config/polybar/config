@@ -17,33 +17,45 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #282a36
+background-alt = #44475a
+foreground = #f8f8f2
+foreground-alt = #f8f8f2
+primary = #50fa7b
+secondary = #ff79c6
+alert = #ff5555
+underline_green = #50fa7b
+underline_pink = #ff79c6
+underline_purple = #bd93f9
+underline_cyan = #8be9fd
 
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+[dracula]
+background = #282a36
+selection = #44475a
+foreground = #f8f8f2
+comment = #6272a4
+cyan = #8be9fd
+green = #50fa7b
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+red = #ff5555
+yellow = #f1fa8c
+
+[bar/dracula]
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 radius = 6.0
-fixed-center = false
+fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${dracula.background}
+foreground = ${dracula.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${dracula.red}
 
 border-size = 0
-border-color = #00000000
+border-color = ${dracula.selection}
 
 padding-left = 0
 padding-right = 2
@@ -55,38 +67,32 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3
-modules-center = mpd
-modules-right = filesystem alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-left = bspwm xwindow
+modules-center = date
+modules-right =keyboard filesystem pulseaudio wlan eth battery0 battery1 temperature powermenu
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = bspwm
 
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:150:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${dracula.red}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -111,19 +117,19 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${dracula.comment}
+label-focused-underline= ${dracula.green}
 label-focused-padding = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
 
 label-urgent = %index%!
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${dracula.red}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${dracula.foreground}
 label-empty-padding = 2
 
 ; Separator in between workspaces
@@ -206,8 +212,8 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-prefix-foreground = ${dracula.foreground}
+format-underline = ${dracula.green
 label = %percentage:2%%
 
 [module/memory]
@@ -224,14 +230,13 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected-underline = ${dracula.purple}
+label-connected = %essid% %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${dracula.red}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${dracula.foreground}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -245,10 +250,10 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${dracula.purple}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+format-connected-prefix-foreground = ${dracula.foreground}
+label-connected = %ifname% %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -260,17 +265,17 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
+date = "%m-%d %Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-prefix-foreground = ${dracula.foreground}
+format-underline = ${dracula.pink}
 
-label = %date% %time%
+label = %date%     %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -327,31 +332,64 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
+[module/battery0]
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${dracula.green}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${dracula.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${dracula.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${dracula.foreground}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${dracula.green}
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${dracula.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${dracula.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${dracula.foreground}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
@@ -366,13 +404,13 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = ${dracula.underline}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${dracula.red}
 
 ramp-0 = 
 ramp-1 = 
