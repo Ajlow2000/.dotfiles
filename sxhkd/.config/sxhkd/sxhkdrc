@@ -12,6 +12,10 @@ super + shift + Return
 super + c
     $IDE
 
+# Rofi
+super + r
+    rofi -show run
+
 # Open nmtui
 super + n
     $TERMINAL -e nmtui
@@ -22,7 +26,7 @@ super + p
 
 # Kill focused container
 super + shift + q
-    bspc node -k
+    bspc node focused -k
 
 # Reload sxhkd and bspwm
 super + shift + r
