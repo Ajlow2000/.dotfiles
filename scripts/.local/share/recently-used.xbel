@@ -53,4 +53,24 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/ajlow/Downloads/archlinux-2019.12.01-x86_64.iso" added="2019-12-30T21:35:58Z" modified="2019-12-30T21:54:51Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-cd-image"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2019-12-30T21:54:51Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ajlow/media/youtube/linux/neomutt/neomutt_ex_config.mkv" added="2019-12-30T21:39:39Z" modified="2019-12-30T21:39:39Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/x-matroska"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2019-12-30T21:39:39Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>
