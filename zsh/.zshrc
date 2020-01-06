@@ -26,22 +26,23 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
-# Prompt
-# TODO
 
 ##### Zplug
-#zplug "dracula/zsh",as:theme
+source /usr/share/zsh/scripts/zplug/init.zsh
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed
-#if ! zplug check --verbose; then
-#    printf "Install? [y/N]: "
-#    if read -q; then
-#        echo; zplug install
-#    fi
-#fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 # Source the plguins and add commands to $PATH
-#zplug load
+zplug load
 
 ###### Source all posix shortcuts
 for f in ~/.config/posix/*; do

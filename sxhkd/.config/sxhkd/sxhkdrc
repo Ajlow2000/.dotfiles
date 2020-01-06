@@ -26,7 +26,7 @@ super + p
 
 # Graphical File Browser
 super + e
-    dolphin
+    nautilus
 
 # Kill focused container
 super + shift + q
@@ -39,6 +39,10 @@ super + shift + r
 # Run Dmenu
 super + d
     dmenu_run
+
+# Close Bspwm session
+super + shift + l
+    dunstify "Closing bspwm"; $HOME/.config/bspwm/close_bspwm
 
 # ----- Navigation -----#
 
