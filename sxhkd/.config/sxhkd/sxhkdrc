@@ -28,10 +28,6 @@ super + p
 super + e
     nautilus
 
-# Kill focused container
-super + shift + q
-    bspc node focused -k
-
 # Reload sxhkd and bspwm
 super + shift + r
     bspc wm -r; pkill -USR1 -c sxhkd; pkill -USR1 -c picom; dunstify "BSPwm/SXHKD Reloaded"
@@ -67,6 +63,10 @@ super + shift + {1-9,0}
     bspc node -d {1-9,0} --follow
 
 # ----- Resize ----- #
+
+# Kill focused container
+super + shift + q
+    bspc node focused -k
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
