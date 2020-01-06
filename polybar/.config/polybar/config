@@ -30,17 +30,17 @@ underline_purple = #bd93f9
 underline_cyan = #8be9fd
 
 [dracula]
-background = #282a36
+background = #aa282a36
 selection = #44475a
 foreground = #f8f8f2
-comment = #6272a4
+comment = #aa6272a4
 cyan = #8be9fd
-green = #50fa7b
-orange = #ffb86c
-pink = #ff79c6
-purple = #bd93f9
-red = #ff5555
-yellow = #f1fa8c
+green = #aa50fa7b
+orange = #aaffb86c
+pink = #aaff79c6
+purple = #aabd93f9
+red = #aaff5555
+yellow = #aaf1fa8c
 
 [bar/dracula]
 width = 100%

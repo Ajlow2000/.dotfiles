@@ -2,15 +2,15 @@
 
 # Terminal
 super + Return
-    $TERMINAL
+    termite
 
 # Browser
 super + shift + Return
-    $BROWSER
+    firefox
 
 # IDE
 super + c
-    $IDE
+    codium
 
 # Rofi
 super + r
@@ -18,11 +18,15 @@ super + r
 
 # Open nmtui
 super + n
-    $TERMINAL -e nmtui
+    termite -e nmtui
 
 # Open python term
 super + p
-    $TERMINAL -e python
+    termite -e python
+
+# Graphical File Browser
+super + e
+    dolphin
 
 # Kill focused container
 super + shift + q
@@ -30,7 +34,7 @@ super + shift + q
 
 # Reload sxhkd and bspwm
 super + shift + r
-    bspc wm -r; pkill -USR1 -c sxhkd; dunstify "BSPwm/SXHKD Reloaded"
+    bspc wm -r; pkill -USR1 -c sxhkd; pkill -USR1 -c picom; dunstify "BSPwm/SXHKD Reloaded"
 
 # Run Dmenu
 super + d

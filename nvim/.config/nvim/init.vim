@@ -15,21 +15,23 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Declare the list of plugins.
-Plug 'tpope/vim-sensible'                   " Basics
-Plug 'dracula/vim', { 'as': 'dracula' }     " Colorscheme
-Plug 'kien/rainbow_parentheses.vim'         " Color bracket pairs
-Plug 'vim-airline/vim-airline'              " Status Line
+Plug 'tpope/vim-sensible'                           " Basics
+" Plug 'dracula/vim', { 'as': 'dracula' }             " Dracula Colorscheme
+Plug 'arcticicestudio/nord-vim'                     " Nord Colorscheme
+Plug 'kien/rainbow_parentheses.vim'                 " Color bracket pairs
+Plug 'vim-airline/vim-airline'                      " Status Line
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'                  " File Exploring Tree
-Plug 'scrooloose/nerdcommenter'             " Block Commenting
-Plug 'Yggdroot/indentLine'                  " Show indentation levels
-Plug 'ntpeters/vim-better-whitespace'       " Highlights and strips whitespace
-" Plug 'coldfix/hexHighlight'                 " Highlight hex color codes
+Plug 'scrooloose/nerdtree'                          " File Exploring Tree
+Plug 'scrooloose/nerdcommenter'                     " Block Commenting
+Plug 'Yggdroot/indentLine'                          " Show indentation levels
+Plug 'ntpeters/vim-better-whitespace'               " Highlights and strips whitespace
+" Plug 'coldfix/hexHighlight'                         " Highlight hex color codes
 
 " ##### Language Support #####
-Plug 'plasticboy/vim-markdown'              " Markdown Syntax
-Plug 'zacharied/lc3.vim'                    " LC3 Syntax
-" Plug 'davidhalter/jedi-vim'                 " Python Autocompletion
+Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }  " SXHKD config syntax
+""Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
+Plug 'zacharied/lc3.vim', { 'for': 'asm' }            " LC3 Syntax
+" Plug 'davidhalter/jedi-vim'                         " Python Autocompletion
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -137,17 +139,17 @@ filetype plugin on
 hi Normal guibg=NONE ctermbg=NONE
 
 " Status Line theme
-let g:airline_theme='dracula'
+let g:airline_theme='nord'
 
 " Highlight indent chars with colorscheme
 let g:indentLine_setColors = 0
 
 " Set colorscheme
-colorscheme dracula
+colorscheme nord
 
 " Include bold/italic/underline/inverse attributes in highlighting
-let g:dracula_bold = 1
-let g:dracula_italic = 1
-let g:dracula_underline = 1
-let g:dracula_inverse = 1
-let g:dracula_colorterm = 1
+"let g:dracula_bold = 1
+"let g:dracula_italic = 1
+"let g:dracula_underline = 1
+"let g:dracula_inverse = 1
+"let g:dracula_colorterm = 1
