@@ -9,4 +9,6 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar dracula -r &
+polybar bspwm -r &
+polybar datetime -r &
+polybar sysinfo -r &

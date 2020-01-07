@@ -31,20 +31,21 @@ cd ../
 
 echo "Install basic workflow apps"
 
-sudo pacman -S bspwm
-sudo pacman -S sxhkd
-sudo pacman -S dunst
-sudo pacman -S picom
-sudo pacman -S rofi
-sudo pacman -S zsh
-sudo pacman -S bash
-sudo pacman -S neovim
-sudo pacman -S termite
-sudo pacman -S xorg-xbacklight
-sudo pacman -S nautilus
-sudo pacman -S alsa-utils
-sudo pacman -S lxappearance
+sudo pacman -S bspwm                # Window Manager
+sudo pacman -S sxhkd                # Keybinds
+sudo pacman -S dunst                # Notification Server
+sudo pacman -S picom                # Compositor
+sudo pacman -S rofi                 # Application Launcher
+sudo pacman -S zsh                  # Preferred Shell
+sudo pacman -S bash                 # Included for Compatibility
+sudo pacman -S neovim               # CLI Editor
+sudo pacman -S termite              # Terminal
+sudo pacman -S xorg-xbacklight      # Screen Brightness
+sudo pacman -S nautilus             # Graphical File Manager
+sudo pacman -S alsa-utils           # almixer
+sudo pacman -S lxappearance         # Manually set GTK+
 sudo pacman -S tree
+sudo pacman -S blueman              # Bluetooth
 
 yay -S polybar
 yay -S vscodium-bin
@@ -68,12 +69,15 @@ stow polybar
 
 # ----- Config Changes ----- #
 
+    # Update Shells
 source $HOME/.zshrc
 source $HOME/.bashrc
 
+    # General Configs
 config_git.sh; echo "Git configured for Ajlow"
 install_vim-plug.sh; echo "Installed Vim-plug"
 
-sudo usermod -s /bin/zsh $USER
+sudo usermod -s /bin/zsh $USER      # Switch shell
+sudo usermod -aG video $USER        # To control backlight
 
 echo "Please restart your Xsession to implement changes"

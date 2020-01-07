@@ -37,7 +37,7 @@ super + d
     dmenu_run
 
 # Close Bspwm session
-super + shift + l
+ctrl + alt + l
     dunstify "Closing bspwm"; $HOME/.config/bspwm/close_bspwm
 
 # ----- Navigation -----#
@@ -89,7 +89,7 @@ XF86Audio{Raise,Lower}Volume
     amixer sset Master 5%{+,-}
 
 XF86MonBrightnessUp
-    xbacklight -inc 15; dunstify "Brightness +15"
+    xbacklight -inc 15 && dunstify "Brightness +15"
 
 XF86MonBrightnessDown
-    xbacklight -dec 15; dunstify "Brightness -15"
+    xbacklight -dec 15 && dunstify "Brightness -15"
