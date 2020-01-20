@@ -16,20 +16,24 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Declare the list of plugins.
 Plug 'tpope/vim-sensible'                           " Basics
-" Plug 'dracula/vim', { 'as': 'dracula' }             " Dracula Colorscheme
 Plug 'arcticicestudio/nord-vim'                     " Nord Colorscheme
 Plug 'kien/rainbow_parentheses.vim'                 " Color bracket pairs
-Plug 'vim-airline/vim-airline'                      " Status Line
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'                      " Status Line
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'                          " File Exploring Tree
 Plug 'scrooloose/nerdcommenter'                     " Block Commenting
 Plug 'Yggdroot/indentLine'                          " Show indentation levels
 Plug 'ntpeters/vim-better-whitespace'               " Highlights and strips whitespace
+Plug 'tpope/vim-fugitive'                           " Git integration
+Plug 'tpope/vim-rhubarb'                            " Github support
 " Plug 'coldfix/hexHighlight'                         " Highlight hex color codes
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-obsession'                          " Vim session saving
 
 " ##### Language Support #####
 Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }  " SXHKD config syntax
-""Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
+Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
 Plug 'zacharied/lc3.vim', { 'for': 'asm' }            " LC3 Syntax
 " Plug 'davidhalter/jedi-vim'                         " Python Autocompletion
 
@@ -79,6 +83,9 @@ set relativenumber
 
 " highlight matching brackets
 set showmatch
+
+" Disable swap files
+set noswapfile
 
 " natural splitting
 set splitbelow splitright
@@ -130,6 +137,7 @@ filetype plugin indent on
 " allow plugins to use filetype specific info
 filetype plugin on
 
+
 " #############################################################################
 " ##### Visuals ###############################################################
 " #############################################################################
@@ -138,18 +146,20 @@ filetype plugin on
 " Transparency
 hi Normal guibg=NONE ctermbg=NONE
 
-" Status Line theme
-let g:airline_theme='nord'
-
 " Highlight indent chars with colorscheme
-let g:indentLine_setColors = 0
+let g:indentLine_setColors = 1
+
+" Status Line theme
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " Set colorscheme
 colorscheme nord
-
-" Include bold/italic/underline/inverse attributes in highlighting
-"let g:dracula_bold = 1
-"let g:dracula_italic = 1
-"let g:dracula_underline = 1
-"let g:dracula_inverse = 1
-"let g:dracula_colorterm = 1

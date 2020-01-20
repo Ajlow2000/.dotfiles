@@ -13,11 +13,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Prompt
-autoload -U colors && colors
-PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
 
-# Git Integration
+# ----- Git Integration ---- #
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -27,13 +24,13 @@ zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 
-##### Zplug
+# ----- Zplug ----- #
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Install plugins if there are plugins that have not been installed
+    # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -41,10 +38,23 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# Source the plguins and add commands to $PATH
+    # Uninstall removed plugins
+zplug clean
+
+    # Source the plguins and add commands to $PATH
 zplug load
 
-###### Source all posix shortcuts
+# ----- Prompt ----- #
+
+autoload -U colors && colors
+PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+
+#powerline-daemon -q
+
+#. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+
+
+# ----- Source shortcuts ----- #
 for f in ~/.config/posix/*; do
     source $f
 done

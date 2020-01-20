@@ -1,7 +1,5 @@
-# Shortcuts
-alias e="nvim"
-alias r="ranger"
-alias p="python3"
+# Shortcut to edit BANNER.sh
+alias b="nvim $HOME/.local/scripts/BANNER.sh"
 
 # Some gerneral settings
 alias ls="ls --group-directories-first --color"

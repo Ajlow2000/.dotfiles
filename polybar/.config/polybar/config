@@ -13,6 +13,7 @@
 ;   go to https://github.com/polybar/polybar
 ;
 ;   Custom Polybar by Alec Lowry (Ajlow)
+;       bar/base sets a uniform theme for my bars, while bars/{bspwm,datetime,sysingo} handle the actual modules to represent and their order of appearance on screen.
 ;
 ;==========================================================
 
@@ -55,7 +56,7 @@ border-size = 10
 border-color = #00ffffff
 
 background = ${nord.nord1}
-foreground = ${nord.nord7}
+foreground = ${nord.nord4}
 
 line-size = 3
 line-color = ${nord.nord11}
@@ -68,9 +69,9 @@ cursor-click = pointer
 
 [bar/bspwm]
 inherit = bar/base
-width = 350
+width = 820
 
-modules-center = bspwm
+modules-left= bspwm
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -128,7 +129,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${nord.nord1}
-label-focused-underline= ${nord.nord5}
+label-focused-underline= ${nord.nord7}
 label-focused-padding = 2
 
 label-occupied = %index%*
@@ -139,7 +140,6 @@ label-urgent-background = ${nord.nord11}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = ${nord.nord7}
 label-empty-padding = 2
 
 ; label-separator = |
@@ -229,7 +229,6 @@ type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
-label-volume-foreground = ${nord.nord7}
 
 label-muted = 🔇 muted
 label-muted-foreground = ${nord.nord7}
