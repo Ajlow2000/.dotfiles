@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Checks if a dots tmux session is running and connects, if not, creates one
 

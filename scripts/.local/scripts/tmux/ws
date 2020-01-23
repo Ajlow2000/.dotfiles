@@ -12,20 +12,12 @@ function ws_up() {
     tmux rename-window -t $SESSION:0 "root"
 
 
-    if [ -f "./README.md" ]; then
-        # create a pane with the README open
-        tmux split-pane -h
-        tmux select-pane -t $SESSION:0.0
-        tmux resize-window -R 30
-        tmux respawn-pane -t $SESSION:0.1 -k "nvim README.md"
-    fi
-
     # TODO - Add a pane for git status
 
     tmux respawn-pane -t $SESSION:0.0 -k "ranger $(pwd)"
 
         # Attach
-    tmux select-pane -t $SESSION:0.0
+    #tmux select-pane -t $SESSION:0.0
     tmux attach-session -t $SESSION
 }
 

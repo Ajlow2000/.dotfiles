@@ -15,8 +15,11 @@ function cs() {
     ls
 }
 
+
+# SSH aliases
+alias csl="ssh lowry@best-linux.cs.wisc.edu"
 alias wopr="ssh server@wopr"
 
 
 # Source rc file regardless of shell
-#alias sourcesh='source .($SHELL)rc' # TODO
+#alias sourcesh='source .($SHELL)rc' # FIXME
