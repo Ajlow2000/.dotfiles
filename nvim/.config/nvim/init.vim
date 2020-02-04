@@ -1,53 +1,80 @@
-"  ##################################################################
-"  _   _                 _              ____             __ _
-" | \ | | ___  _____   _(_)_ __ ___    / ___|___  _ __  / _(_) __ _
-" |  \| |/ _ \/ _ \ \ / / | '_ ` _ \  | |   / _ \| '_ \| |_| |/ _` |
-" | |\  |  __/ (_) \ V /| | | | | | | | |__| (_) | | | |  _| | (_| | |_| \_|\___|\___/ \_/ |_|_| |_| |_|  \____\___/|_| |_|_| |_|\__, | |___/
-"  ##################################################################
 
-" #############################################################################
-" ##### VimPlug ###############################################################
-" #############################################################################
+" ##### VimPlug #####
+        " Install Vim Plug
+    if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+	    echo "Downloading junegunn/vim-plug to manage plugins..."
+	    silent !mkdir -p ~/.config/nvim/autoload/
+	    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+	    autocmd VimEnter * PlugInstall
+    endif
 
-" Plugins will be downloaded under the specified directory.
-call plug#begin('~/.local/share/nvim/plugged')
+        " Plugins will be downloaded under the specified directory.
+    call plug#begin('~/.local/share/nvim/plugged')
 
-" Declare the list of plugins.
-Plug 'tpope/vim-sensible'                           " Basics
-Plug 'arcticicestudio/nord-vim'                     " Nord Colorscheme
-Plug 'kien/rainbow_parentheses.vim'                 " Color bracket pairs
-"Plug 'vim-airline/vim-airline'                      " Status Line
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'                          " File Exploring Tree
-Plug 'scrooloose/nerdcommenter'                     " Block Commenting
-Plug 'Yggdroot/indentLine'                          " Show indentation levels
-Plug 'ntpeters/vim-better-whitespace'               " Highlights and strips whitespace
-Plug 'tpope/vim-fugitive'                           " Git integration
-Plug 'tpope/vim-rhubarb'                            " Github support
-" Plug 'coldfix/hexHighlight'                         " Highlight hex color codes
-Plug 'junegunn/goyo.vim'
-Plug 'tpope/vim-obsession'                          " Vim session saving
+        " General Plugins
+    Plug 'tpope/vim-sensible'                           " Basics
+    Plug 'arcticicestudio/nord-vim'                     " Nord Colorscheme
+    Plug 'kien/rainbow_parentheses.vim'                 " Color bracket pairs
+    Plug 'itchyny/lightline.vim'                        " Status Bar
+    Plug 'scrooloose/nerdtree'                          " File Exploring Tree
+    Plug 'scrooloose/nerdcommenter'                     " Block Commenting
+    Plug 'Yggdroot/indentLine'                          " Show indentation levels
+    Plug 'ntpeters/vim-better-whitespace'               " Better Whitespace Mngmt
+    Plug 'tpope/vim-fugitive'                           " Git integration
+    Plug 'tpope/vim-rhubarb'                            " Github support
+    " Plug 'coldfix/hexHighlight'                         " Highlight hex color codes
+    Plug 'junegunn/goyo.vim'
+    Plug 'tpope/vim-obsession'                          " Vim session saving
 
-" ##### Language Support #####
-Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }  " SXHKD config syntax
-Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
-Plug 'zacharied/lc3.vim', { 'for': 'asm' }            " LC3 Syntax
-" Plug 'davidhalter/jedi-vim'                         " Python Autocompletion
+        " ##### Language Support #####
+    Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }  " SXHKD config syntax
+    Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
+    "Plug 'lervag/vimtex'                                " LaTex
+    Plug 'vim-latex/vim-latex'
+    " Plug 'davidhalter/jedi-vim'                         " Python Autocompletion
 
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
+        " List ends here. Plugins become visible to Vim after this call.
+    call plug#end()
 
-" #############################################################################
-" ##### Miscellaneous #########################################################
-" #############################################################################
 
-" Highlight current line of active window
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup END
+" #####  Mappings #####
+    let mapleader ="\\"
+
+        " Vimrc
+    nnoremap <leader>vr :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
+    nnoremap <Leader>ve :e $XDG_CONFIG_HOME/nvim/init.vim<CR>
+
+        " Compile Document
+    map <leader>c :w! \| !compiler <c-r>%<CR>
+
+        " Open preview
+	map <leader>p :w! \| !preview <c-r>%<CR>
+
+        " NERDTree HotKey
+    map <leader>n :NERDTreeToggle<CR>
+
+        " Goyo
+    map <leader>g :Goyo<CR>
+
+        " split shortcuts
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+
+        " Spell Check toggle
+    nnoremap <silent> <leader>s :set spell!<cr>
+    inoremap <silent> <leader>s <C-O>:set spell!<cr>
+
+" ##### Miscellaneous #####
+        " Highlight current line of active window
+    augroup BgHighlight
+        autocmd!
+        autocmd WinEnter * set cul
+        autocmd WinLeave * set nocul
+    augroup END
+
+" ##### Autocommands #####
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -58,15 +85,11 @@ let g:NERDCompactSexyComs = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
-
 " Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" NERDTree Hotkey
-map <C-n> :NERDTreeToggle<CR>
 
 " Close vim if NERDTree is the only open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -88,11 +111,6 @@ set noswapfile
 " natural splitting
 set splitbelow splitright
 
-" split shortcuts
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 " disable auto commenting on newlines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -126,46 +144,40 @@ set expandtab
 " set reproduce the indentation of the previous line
 set autoindent
 
-" increase indent level after '{', decrease after '}'
+    " increase indent level after '{', decrease after '}'
 set smartindent
 
-" use language specific plugins for indenting
+    " use language specific plugins for indenting
 filetype plugin indent on
 
-" allow plugins to use filetype specific info
+    " allow plugins to use filetype specific info
 filetype plugin on
 
-    " SpellCheck Toggle F3
+    " SpellCheck
 set spelllang=en
-nnoremap <silent> <F3> :set spell!<cr>
-inoremap <silent> <F3> <C-O>:set spell!<cr>
 
     " Dont break words when wrapping
-set nolist wrap linebreak breakat&vim
+set nolist wrap linebreak breakat&vim breakindent
 
 
-" #############################################################################
-" ##### Visuals ###############################################################
-" #############################################################################
+" ##### Visuals #####
+        " Transparency
+    hi Normal guibg=NONE ctermbg=NONE
 
+        " Highlight indent chars with colorscheme
+    let g:indentLine_setColors = 1
 
-" Transparency
-hi Normal guibg=NONE ctermbg=NONE
+    " Status Line theme
+    let g:lightline = {
+          \ 'colorscheme': 'wombat',
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+          \ },
+          \ 'component_function': {
+          \   'gitbranch': 'fugitive#head'
+          \ },
+          \ }
 
-" Highlight indent chars with colorscheme
-let g:indentLine_setColors = 1
-
-" Status Line theme
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-" Set colorscheme
-colorscheme nord
+        " Set colorscheme
+    colorscheme nord

@@ -58,3 +58,5 @@ PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_c
 for f in ~/.config/posix/*; do
     source $f
 done
+
+source /home/ajlow/.config/broot/launcher/bash/br

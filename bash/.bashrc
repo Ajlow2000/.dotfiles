@@ -120,3 +120,5 @@ fi
 for f in ~/.config/posix/*; do
     source $f
 done
+
+source /home/ajlow/.config/broot/launcher/bash/br
