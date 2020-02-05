@@ -40,15 +40,15 @@ sudo pacman -S zsh                  # Preferred Shell
 sudo pacman -S bash                 # Included for Compatibility
 sudo pacman -S neovim               # CLI Editor
 sudo pacman -S termite              # Terminal
-sudo pacman -S xorg-xbacklight      # Screen Brightness
 sudo pacman -S nautilus             # Graphical File Manager
+sudo pacman -S ranger
 sudo pacman -S alsa-utils           # almixer
 sudo pacman -S lxappearance         # Manually set GTK+
-sudo pacman -S tree
+sudo pacman -S broot                # Dir Structure Visualizer iwth fuzzy finding
 sudo pacman -S blueman              # Bluetooth
+sudo pacman -S code                 # IDE
 
 yay -S polybar
-yay -S vscodium-bin
 yay -S zplug
 
 # ----- Deploy Dots ----- #
