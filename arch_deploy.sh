@@ -47,6 +47,8 @@ sudo pacman -S lxappearance         # Manually set GTK+
 sudo pacman -S broot                # Dir Structure Visualizer iwth fuzzy finding
 sudo pacman -S blueman              # Bluetooth
 sudo pacman -S code                 # IDE
+sudo pacman -S evince               # pdf Viewer
+sudo pacman -S pdflatex
 
 yay -S polybar
 yay -S zplug
