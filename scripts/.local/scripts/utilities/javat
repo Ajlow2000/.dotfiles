@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# A Wrapper that compiles, runs, then removes .class file.
+
+file=$(readlink -f "$1")
+base="${file%.*}"
+
+javac $file
+echo $base
+java $base
+rm $base.class

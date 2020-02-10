@@ -11,5 +11,6 @@ cd "$dir" || exit
 case $file in
     *\.tex) evince $base.pdf ;;
     *\.py)  $TERMINAL -e python $file ;;
+    *\.java) $TERMINAL -e java $base ;;
     *)      echo "File type not supported" ;;
 esac
