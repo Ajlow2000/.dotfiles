@@ -23,7 +23,6 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
-
 # ----- Zplug ----- #
 source /usr/share/zsh/scripts/zplug/init.zsh
 
@@ -48,11 +47,6 @@ zplug load
 
 autoload -U colors && colors
 PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
-
-#powerline-daemon -q
-
-#. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
-
 
 # ----- Source shortcuts ----- #
 for f in ~/.config/posix/*; do

@@ -48,8 +48,10 @@ sudo pacman -S broot                # Dir Structure Visualizer iwth fuzzy findin
 sudo pacman -S blueman              # Bluetooth
 sudo pacman -S code                 # IDE
 sudo pacman -S evince               # pdf Viewer
-sudo pacman -S pdflatex
+sudo pacman -S texlive-latexextra
+sudo pacman -S tree
 
+yay -S spotify
 yay -S polybar
 yay -S zplug
 
@@ -79,7 +81,7 @@ source $HOME/.bashrc
 config_git.sh; echo "Git configured for Ajlow"
 install_vim-plug.sh; echo "Installed Vim-plug"
 
-sudo usermod -s /bin/zsh $USER      # Switch shell
-sudo usermod -aG video $USER        # To control backlight
+sudo usermod -s /bin/zsh ajlow      # Switch shell
+sudo usermod -aG video ajlow        # To control backlight
 
 echo "Please restart your Xsession to implement changes"

@@ -16,22 +16,19 @@
     Plug 'arcticicestudio/nord-vim'                     " Nord Colorscheme
     Plug 'kien/rainbow_parentheses.vim'                 " Color bracket pairs
     Plug 'itchyny/lightline.vim'                        " Status Bar
-    Plug 'scrooloose/nerdtree'                          " File Exploring Tree
-    Plug 'scrooloose/nerdcommenter'                     " Block Commenting
+    Plug 'preservim/nerdtree'                           " File Exploring Tree
+    Plug 'preservim/nerdcommenter'                      " Block Commenting
     Plug 'Yggdroot/indentLine'                          " Show indentation levels
     Plug 'ntpeters/vim-better-whitespace'               " Better Whitespace Mngmt
+    Plug 'junegunn/goyo.vim'                            " Focus mode
+
     Plug 'tpope/vim-fugitive'                           " Git integration
     Plug 'tpope/vim-rhubarb'                            " Github support
     " Plug 'coldfix/hexHighlight'                         " Highlight hex color codes
-    Plug 'junegunn/goyo.vim'
     Plug 'tpope/vim-obsession'                          " Vim session saving
 
         " ##### Language Support #####
-    Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }  " SXHKD config syntax
-    Plug 'plasticboy/vim-markdown'                      " Markdown Syntax
-    "Plug 'lervag/vimtex'                                " LaTex
-    Plug 'vim-latex/vim-latex'
-    " Plug 'davidhalter/jedi-vim'                         " Python Autocompletion
+    Plug 'sheerun/vim-polyglot'                         " Lots of languages
 
         " List ends here. Plugins become visible to Vim after this call.
     call plug#end()
@@ -53,21 +50,33 @@
         " NERDTree HotKey
     map <leader>n :NERDTreeToggle<CR>
 
+        " Switch vim window focus
+    map <leader>w :wincmd w<cr>
+
         " Goyo
     map <leader>g :Goyo<CR>
 
-        " split shortcuts
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
+        " split shortcuts TODO - Auto absorb trailing bracket
+    " map <C-h> <C-w>h
+    " map <C-j> <C-w>j
+    " map <C-k> <C-w>k
+    " map <C-l> <C-w>l
 
         " Spell Check toggle
     nnoremap <silent> <leader>s :set spell!<cr>
     inoremap <silent> <leader>s <C-O>:set spell!<cr>
 
-" ##### Miscellaneous #####
-        " Highlight current line of active window
+" ##### Autoclosing #####
+    inoremap " ""<left>
+    inoremap ' ''<left>
+    inoremap ( ()<left>
+    inoremap [ []<left>
+    inoremap { {}<left>
+    inoremap {<CR> {<CR>}<ESC>O
+    inoremap {;<CR> {<CR>};<ESC>O
+
+" ##### Zvfpryynarbhf #####
+        " Uvtuyvtug pheerag yvar bs npgvir jvaqbj
     augroup BgHighlight
         autocmd!
         autocmd WinEnter * set cul

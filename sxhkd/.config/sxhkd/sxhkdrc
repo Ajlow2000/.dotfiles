@@ -2,7 +2,7 @@
 
     # Terminal
 super + Return
-    termite
+    $TERMINAL
 
     # Browser
 super + shift + Return
@@ -42,17 +42,25 @@ ctrl + alt + l
 
 # ----- Navigation -----#
 
+    # Toggle monocle
+super + space
+    bspc desktop -l next
+
     # Shift focus / node
 super + {_,shift + } {h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
 
-    # Walk through desktops on current monitor
-super + {_,shift + }tab
-    bspc desktop -f {next,prev}
-
     # Preselect node spawn direction
 super + ctrl + {h,j,k,l}
     bspc node -p {west,south,north,east}
+
+    # Walk through desktops on current monitor
+super + {_,shift + } Tab
+    bspc desktop -f {next,prev}
+
+    # Walk through occupied desktops
+super + ctrl + {_,shift + } Tab
+	bspc desktop -f {next.occupied,prev.occupied}
 
     # Change Desktop focus
 super + {1-9,0}

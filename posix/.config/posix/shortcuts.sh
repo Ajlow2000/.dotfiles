@@ -12,6 +12,10 @@ function mdless() {
 
 function cs() {
     cd $1
+    if [ -d ./.git/ ]; then
+        git status
+        echo ""
+    fi
     ls
 }
 
