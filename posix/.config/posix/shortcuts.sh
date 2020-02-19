@@ -1,6 +1,11 @@
 # Shortcut to edit BANNER.sh
 alias b="nvim $HOME/.local/scripts/BANNER.sh"
 
+    # Git Shortcuts
+alias gs="git status"
+alias gcm="git commit -m"
+alias ga="git add"
+
 # Some gerneral settings
 alias ls="ls --group-directories-first --color"
 alias grep='grep --color=auto'
