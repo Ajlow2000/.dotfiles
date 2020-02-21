@@ -4,6 +4,14 @@ bspc -r "*"
 
 # ----- Autostart ----- #
 
+    # Variables
+export BROWSER="/usr/bin/firefox"
+export TERMINAL="/usr/bin/termite"
+export EDITOR="/usr/bin/nvim"
+export GEDITOR="/usr/bin/code"
+export FILE_EXPLORER="/usr/bin/nautilus"
+
+    # Procs
 picom &
 sxhkd &
 dunst &

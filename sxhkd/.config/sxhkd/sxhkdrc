@@ -2,7 +2,7 @@
 
     # Terminal
 super + Return
-    $TERMINAL
+    termite
 
     # Browser
 super + shift + Return
