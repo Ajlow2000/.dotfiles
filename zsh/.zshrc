@@ -23,26 +23,6 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
-# ----- Zplug ----- #
-source /usr/share/zsh/scripts/zplug/init.zsh
-
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-    # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-    # Uninstall removed plugins
-zplug clean
-
-    # Source the plguins and add commands to $PATH
-zplug load
-
 # ----- Prompt ----- #
 
 autoload -U colors && colors
@@ -54,3 +34,7 @@ for f in ~/.config/posix/*; do
 done
 
 source /home/ajlow/.config/broot/launcher/bash/br
+
+    # ZSH Syntax
+source /home/ajlow/.dotfiles/zsh/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
