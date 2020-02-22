@@ -33,7 +33,9 @@ PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$rese
     # Right Prompt
 #RPROMPT=
 
-# ----- Source shortcuts ----- #
+# ----- Source Extensions----- #
+
+    # Custom Shortcuts
 for f in ~/.config/posix/*; do
     source $f
 done
@@ -43,3 +45,5 @@ source /home/ajlow/.config/broot/launcher/bash/br
     # ZSH Syntax - Depends on .config/zsh/zsh-syntax-highlighting
 source /home/ajlow/.dotfiles/zsh/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+    # Colored man pages - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+source $HOME/.config/zsh/colored-man-pages.zsh
