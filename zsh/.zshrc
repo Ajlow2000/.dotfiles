@@ -22,18 +22,8 @@ compinit
 # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 # zstyle ':vcs_info:*' enable git
 
-
-
-# ----- Prompt ----- #
-autoload -U colors && colors
-
-    # Left Prompt
-PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
-
-    # Right Prompt
-#RPROMPT=
-
 # ----- Source Extensions----- #
+ZSH_CONFIG_HOME=$HOME"/.config/zsh"
 
     # Custom Shortcuts
 for f in ~/.config/posix/*; do
@@ -43,7 +33,23 @@ done
 source /home/ajlow/.config/broot/launcher/bash/br
 
     # ZSH Syntax - Depends on .config/zsh/zsh-syntax-highlighting
-source /home/ajlow/.dotfiles/zsh/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CONFIG_HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # Colored man pages - https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
-source $HOME/.config/zsh/colored-man-pages.zsh
+source $ZSH_CONFIG_HOME/colored-man-pages.zsh
+
+    # Colored cat and less
+#source $ZSH_CONFIG_HOME/colorize-prev.zsh
+
+    # Git prompt - https://github.com/olivierverdier/zsh-git-prompt
+source $ZSH_CONFIG_HOME/zsh-git-prompt/zshrc.sh
+export GIT_PROMPT_EXECUTABLE="haskell"
+
+# ----- Prompt ----- #
+autoload -U colors && colors
+
+    # Left Prompt
+PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+
+    # Right Prompt
+RPROMPT='%? $(git_super_status)'
