@@ -15,18 +15,24 @@ compinit
 
 
 # ----- Git Integration ---- #
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
-zstyle ':vcs_info:*' enable git
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# setopt prompt_subst
+# zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
+# zstyle ':vcs_info:*' enable git
+
+
 
 # ----- Prompt ----- #
-
 autoload -U colors && colors
-PS1="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+
+    # Left Prompt
+PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+
+    # Right Prompt
+source $HOME/.config/zsh/git-prompt-super.sh
+RPROMPT='%B%m%~%b$(git_super_status) %# '
 
 # ----- Source shortcuts ----- #
 for f in ~/.config/posix/*; do
@@ -35,6 +41,6 @@ done
 
 source /home/ajlow/.config/broot/launcher/bash/br
 
-    # ZSH Syntax
+    # ZSH Syntax - Depends on .config/zsh/zsh-syntax-highlighting
 source /home/ajlow/.dotfiles/zsh/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

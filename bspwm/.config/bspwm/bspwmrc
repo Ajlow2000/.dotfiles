@@ -15,8 +15,8 @@ export FILE_EXPLORER="/usr/bin/nautilus"
 picom &
 sxhkd &
 dunst &
-$HOME/.fehbg && \
-    $XDG_CONFIG_HOME/polybar/start_polybar.sh
+$HOME/.fehbg
+$HOME/.config/polybar/start_polybar.sh
 
 
 # ----- Monitors and Desktops ----- #
