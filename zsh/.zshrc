@@ -31,8 +31,7 @@ autoload -U colors && colors
 PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
 
     # Right Prompt
-source $HOME/.config/zsh/git-prompt-super.sh
-RPROMPT='%B%m%~%b$(git_super_status) %# '
+#RPROMPT=
 
 # ----- Source shortcuts ----- #
 for f in ~/.config/posix/*; do
