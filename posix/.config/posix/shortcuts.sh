@@ -18,6 +18,7 @@ function mdless() {
 function cs() {
     cd $1
     if [ -d ./.git/ ]; then
+        git fetch
         git status
         echo ""
     fi
