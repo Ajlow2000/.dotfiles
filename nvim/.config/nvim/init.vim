@@ -67,13 +67,13 @@
     inoremap <silent> <leader>s <C-O>:set spell!<cr>
 
 " ##### Autoclosing #####
-    inoremap " ""<left>
-    inoremap ' ''<left>
-    inoremap ( ()<left>
-    inoremap [ []<left>
-    inoremap { {}<left>
-    inoremap {<CR> {<CR>}<ESC>O
-    inoremap {;<CR> {<CR>};<ESC>O
+""    inoremap " ""<left>
+""    inoremap ' ''<left>
+""    inoremap ( ()<left>
+""    inoremap [ []<left>
+""    inoremap { {}<left>
+""    inoremap {<CR> {<CR>}<ESC>O
+""    inoremap {;<CR> {<CR>};<ESC>O
 
 " ##### Zvfpryynarbhf #####
         " Uvtuyvtug pheerag yvar bs npgvir jvaqbj

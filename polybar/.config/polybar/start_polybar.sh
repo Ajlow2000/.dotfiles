@@ -9,6 +9,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar bspwm -r &
-polybar datetime -r &
-polybar sysinfo -r &
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar --reload bspwm -r &
+    MONITOR=$m polybar --reload datetime -r &
+    MONITOR=$m polybar --reload sysinfo -r &
+done

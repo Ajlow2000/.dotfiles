@@ -46,6 +46,8 @@ nord15 = #b48ead
 
 ; ----- BSPWM Bars ----- ;
 [bar/base]
+monitor = ${env:MONITOR:}
+
 width = 100%
 height = 30
 radius =  15
