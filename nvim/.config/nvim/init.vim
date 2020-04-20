@@ -42,7 +42,7 @@
     nnoremap <Leader>ve :e $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
         " Compile Document
-    map <leader>c :w! \| !compiler <c-r>%<CR>
+    map <leader>c :w! \| !compiler <c-r>%<CR><CR>
 
         " Open preview
 	map <leader>p :w! \| !preview <c-r>%<CR>
@@ -55,6 +55,9 @@
 
         " Goyo
     map <leader>g :Goyo<CR>
+
+        " StripWhitespace
+    map <leader>sw :StripWhitespace<CR>
 
         " split shortcuts TODO - Auto absorb trailing bracket
     " map <C-h> <C-w>h
@@ -187,6 +190,10 @@ set nolist wrap linebreak breakat&vim breakindent
           \   'gitbranch': 'fugitive#head'
           \ },
           \ }
+
+        " Cursor Line
+    highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+    set cursorline
 
         " Set colorscheme
     colorscheme nord
