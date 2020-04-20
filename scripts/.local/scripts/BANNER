@@ -1,10 +1,10 @@
 BSPWM/SXHKD
+      - multimonitor
       - rounded windows
       - Screenshot
       - Power saving
       - Lock script
       - Floating windows / scratchpad
-      - multimonitor
 Polybar
       - Figure fonts out
 Dunst
