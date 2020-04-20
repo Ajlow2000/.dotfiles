@@ -30,8 +30,6 @@ for f in ~/.config/posix/*; do
     source $f
 done
 
-source /home/ajlow/.config/broot/launcher/bash/br
-
     # ZSH Syntax - Depends on .config/zsh/zsh-syntax-highlighting
 source $ZSH_CONFIG_HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

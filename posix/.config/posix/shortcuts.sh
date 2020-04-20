@@ -30,6 +30,8 @@ function cs() {
 alias csl="ssh lowry@best-linux.cs.wisc.edu"
 alias wopr="ssh server@wopr"
 
+    # Edit BANNER
+alias banner="$EDITOR $BANNER"
 
 # Source rc file regardless of shell
 #alias sourcesh='source .($SHELL)rc' # FIXME
