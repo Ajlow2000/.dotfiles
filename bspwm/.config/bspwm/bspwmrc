@@ -7,7 +7,17 @@ bspc -r "*"
     # Setup env
 source $HOME/.profile
 
-    # Procs
+    # Disable Caps lock
+setxkbmap -option caps:escape
+
+    # Kill old Procs
+pkill -USR1 -c picom
+pkill -USR1 -c sxhkd
+pkill -USR1 -c dunst
+pkill -USR1 -c unclutter
+
+
+    # Start Procs
 picom &
 sxhkd &
 dunst &
@@ -18,6 +28,7 @@ polybar_start
 
 # ----- Monitors and Desktops ----- #
 bspc monitor -d  1 2 3 4 5 6 7 8 9 0
+bspc monitor DP2-3 -d 1 2 3 4 5 6 7 8 9 0
 
 # ----- General Settings ----- #
 

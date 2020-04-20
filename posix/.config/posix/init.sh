@@ -6,4 +6,3 @@ source $HOME/.profile
 # Prints TODO banner
 cat $BANNER
 
-

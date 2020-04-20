@@ -30,7 +30,7 @@ super + e
 
     # Reload sxhkd and bspwm
 super + shift + r
-    bspc wm -r; pkill -USR1 -c sxhkd; pkill -USR1 -c picom; dunstify "BSPwm/SXHKD Reloaded"
+    bspc wm -r; dunstify "BSPWM Reloaded"
 
     # Run Dmenu
 super + d

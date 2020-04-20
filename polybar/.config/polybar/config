@@ -67,7 +67,7 @@ modules-left = powermenu spotify
 modules-right = volume backlight wireless-network wired-network battery-combined-udev date
 
 [bar/bottom]
-#monitor = eDP-1
+; monitor = DP2-3
 monitor = ${env:MONITOR:}
 bottom = true
 width = 100%

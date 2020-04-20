@@ -1,16 +1,12 @@
 BSPWM/SXHKD
-      - multimonitor
+      - multimonitor navigation
       - rounded windows
       - Screenshot
       - Power saving
       - Lock script
       - Floating windows / scratchpad
-Polybar
-      - Figure fonts out
 Dunst
       - Nord theme
-Spicetify
-      - Transparency
 Tmux
       - Troubleshoot/rewrite ws script
       - TUI wrapper
