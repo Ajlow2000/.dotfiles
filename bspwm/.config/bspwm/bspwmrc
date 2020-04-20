@@ -4,24 +4,19 @@ bspc -r "*"
 
 # ----- Autostart ----- #
 
-    # Variables
-export BROWSER="/usr/bin/firefox"
-export TERMINAL="/usr/bin/termite"
-export EDITOR="/usr/bin/nvim"
-export GEDITOR="/usr/bin/code"
-export FILE_EXPLORER="/usr/bin/nautilus"
+    # Setup env
+source $HOME/.profile
 
     # Procs
 picom &
 sxhkd &
 dunst &
-$HOME/.fehbg
-$HOME/.config/polybar/start_polybar.sh
+bg_apply
+polybar_start
 
 
 # ----- Monitors and Desktops ----- #
-bspc monitor eDP-1 -d  1 2 3 4 5 6 7 8 9 0
-bspc monitor DP-2-3 -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor -d  1 2 3 4 5 6 7 8 9 0
 
 # ----- General Settings ----- #
 

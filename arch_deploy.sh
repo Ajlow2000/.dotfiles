@@ -85,7 +85,13 @@ source $HOME/.bashrc
 config_git.sh; echo "Git configured for Ajlow"
 install_vim-plug.sh; echo "Installed Vim-plug"
 
-sudo usermod -s /bin/zsh $USER		# Switch shell
-sudo usermod -aG video $USER		# To control backlight
+    # User Prefs
+sudo usermod -s /bin/zsh $USER		        # Switch shell
+sudo usermod -aG video,lp,wheel $USER		# To control backlight
+
+    # Bluetooth
+sudo pacman -S bluez bluez-utils --noconfirm
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
 
 echo "Please restart your Xsession to implement changes"

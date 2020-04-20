@@ -36,6 +36,10 @@ super + shift + r
 super + d
     dmenu_run
 
+    # Open Blueman
+super + b
+    blueman-manager
+
     # Close Bspwm session
 ctrl + alt + l
     dunstify "Closing bspwm"; $HOME/.config/bspwm/close_bspwm
