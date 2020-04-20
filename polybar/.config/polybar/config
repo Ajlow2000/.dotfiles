@@ -21,7 +21,7 @@
 ; Polar Night
 nord0 = #2e3440
 nord1 = #dd3b4252
-nord2 = #434c5e
+nord2 = #ee434c5e
 nord3 = #ee4c566a
 
 ; Snow Storm
@@ -48,7 +48,7 @@ monitor = ${env:MONITOR:}
 width = 100%
 height = 34
 
-background = ${nord.nord3}
+background = ${nord.nord2}
 foreground = #ccffffff
 
 line-color = ${bar/bottom.background}

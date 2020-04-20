@@ -11,6 +11,7 @@ source $HOME/.profile
 picom &
 sxhkd &
 dunst &
+unclutter --timeout 5 &
 bg_apply
 polybar_start
 

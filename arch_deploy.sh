@@ -53,6 +53,7 @@ sudo pacman -S code --noconfirm                  # IDE
 sudo pacman -S evince --noconfirm                # pdf Viewer
 sudo pacman -S texlive-latexextra --noconfirm
 sudo pacman -S tree --noconfirm
+sudo pacman -S unclutter --noconfirm             # Lulz for mouser
 
 yay -S spotify --noconfirm
 yay -S spicetify-cli --noconfirm
