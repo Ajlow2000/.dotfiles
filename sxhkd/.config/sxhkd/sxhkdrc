@@ -8,7 +8,7 @@ super + Return
 super + shift + Return
     $BROWSER
 
-# Graphical Editor
+    # Graphical Editor
 super + c
     $GEDITOR
 
@@ -39,6 +39,11 @@ super + d
     # Open Blueman
 super + b
     blueman-manager
+
+    # Open Spectacle
+super + s
+    spectacle
+
 
     # Close Bspwm session
 ctrl + alt + l
