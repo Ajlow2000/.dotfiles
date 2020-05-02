@@ -30,6 +30,7 @@
         " ##### Language Support #####
     Plug 'sheerun/vim-polyglot'                         " Lots of languages
 
+
         " List ends here. Plugins become visible to Vim after this call.
     call plug#end()
 
@@ -88,91 +89,92 @@
 
 " ##### Autocommands #####
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+        " Add spaces after comment delimiters by default
+    let g:NERDSpaceDelims = 1
 
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+        " Use compact syntax for prettified multi-line comments
+    let g:NERDCompactSexyComs = 1
 
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
+        " Align line-wise comment delimiters flush left instead of following code indentation
+    let g:NERDDefaultAlign = 'left'
 
-" Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+        " Rainbow Parentheses
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
 
-" Close vim if NERDTree is the only open window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+        " Close vim if NERDTree is the only open window
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Start NERDTree automatically when using nvim to open a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+        " Start NERDTree automatically when using nvim to open a directory
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
-" set relative line numbers
-set number
-set relativenumber
+        " set relative line numbers
+    set number
+    set relativenumber
 
-" highlight matching brackets
-set showmatch
+        " highlight matching brackets
+    set showmatch
 
-" Disable swap files
-set noswapfile
+        " Disable swap files
+    set noswapfile
 
-" natural splitting
-set splitbelow splitright
+        " natural splitting
+    set splitbelow splitright
 
 
-" disable auto commenting on newlines
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        " disable auto commenting on newlines
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" prevents inserting two spaces after punctuation on a join
-set nojoinspaces
+        " prevents inserting two spaces after punctuation on a join
+    set nojoinspaces
 
-" Sets syntax highlighting
-syntax on
+        " Sets syntax highlighting
+    syntax on
 
 " #############################################################################
 " ##### TAB Behaviour #########################################################
 " #############################################################################
 
-" length of an actual \t char
-set tabstop=4
+        " length of an actual \t char
+    set tabstop=4
 
-" length to use when editing text
-" (0 for 'tabstop', -1 for 'shiftwidth')
-set softtabstop=0
+        " length to use when editing text
+        "   (0 for 'tabstop', -1 for 'shiftwidth')
+    set softtabstop=0
 
-" length to use when shifting text
-set shiftwidth=0
+        " length to use when shifting text
+    set shiftwidth=0
 
-" round indendtation to multiples of 'shiftwidth' when shifting text
-set shiftround
+        " round indendtation to multiples of 'shiftwidth' when shifting text
+    set shiftround
 
-" if set, only insert spaces; otherwise insert \t and complete with spaces
-set expandtab
+        " if set, only insert spaces; otherwise insert \t and complete with spaces
+    set expandtab
 
-" set reproduce the indentation of the previous line
-set autoindent
+        " set reproduce the indentation of the previous line
+    set autoindent
 
-    " increase indent level after '{', decrease after '}'
-set smartindent
+        " increase indent level after '{', decrease after '}'
+    set smartindent
 
-    " use language specific plugins for indenting
-filetype plugin indent on
+        " use language specific plugins for indenting
+    filetype plugin indent on
 
-    " allow plugins to use filetype specific info
-filetype plugin on
+        " allow plugins to use filetype specific info
+    filetype plugin on
 
-    " SpellCheck
-set spelllang=en
+        " SpellCheck
+    set spelllang=en
 
-    " Dont break words when wrapping
-set nolist wrap linebreak breakat&vim breakindent
+        " Dont break words when wrapping
+    set nolist wrap linebreak breakat&vim breakindent
 
 
 " ##### Visuals #####
+
         " Transparency
     hi Normal guibg=NONE ctermbg=NONE
 
