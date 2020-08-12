@@ -1,6 +1,9 @@
 
 # ----- Runtime Env ----- #
 
+    # Server magic
+export TERM=vt100
+
     # Default apps
 export BROWSER="/usr/bin/brave"
 export TERMINAL="/usr/bin/termite"

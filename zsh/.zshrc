@@ -39,15 +39,11 @@ source $ZSH_CONFIG_HOME/colored-man-pages.zsh
     # Colored cat and less
 #source $ZSH_CONFIG_HOME/colorize-prev.zsh
 
-    # Git prompt - https://github.com/olivierverdier/zsh-git-prompt
-source $ZSH_CONFIG_HOME/zsh-git-prompt/zshrc.sh
-export GIT_PROMPT_EXECUTABLE="haskell"
-
 # ----- Prompt ----- #
 autoload -U colors && colors
 
     # Left Prompt
-PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$reset_color%}"
+PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[red]%}%m %{$fg[green]%}%~] %{$reset_color%}"
 
     # Right Prompt
 RPROMPT='%? $(git_super_status)'
