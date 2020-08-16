@@ -29,6 +29,7 @@
 
         " ##### Language Support #####
     Plug 'sheerun/vim-polyglot'                         " Lots of languages
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 
         " List ends here. Plugins become visible to Vim after this call.
@@ -41,6 +42,9 @@
         " Vimrc
     nnoremap <leader>vr :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
     nnoremap <Leader>ve :e $XDG_CONFIG_HOME/nvim/init.vim<CR>
+
+        " Folding
+    nnoremap <space> za
 
         " Compile Document
     map <leader>c :w! \| !compiler <c-r>%<CR><CR>
@@ -172,6 +176,9 @@
         " Dont break words when wrapping
     set nolist wrap linebreak breakat&vim breakindent
 
+        " Fold by indent
+    set foldmethod=indent
+    set foldlevel=99
 
 " ##### Visuals #####
 

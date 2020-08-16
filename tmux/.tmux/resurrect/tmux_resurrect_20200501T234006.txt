@@ -1,0 +1,14 @@
+pane	1	0	:zsh	1	:*	0	:/home/ajlow/.dotfiles/tmux/.config/tmux	0	zsh	:
+pane	1	0	:zsh	1	:*	1	:/home/ajlow/.dotfiles/tmux/.config/tmux	1	zsh	:
+pane	2	0	:zsh	1	:*	0	:/home/ajlow/.dotfiles	1	zsh	:
+pane	3	0	:zsh	1	:*	0	:/home/ajlow	1	zsh	:
+pane	ajlow	0	:root	1	:*	0	:/home/ajlow/.dotfiles/tmux	1	zsh	:
+pane	ajlow	1	:zsh	0	:-	0	:/home/ajlow	1	zsh	:
+pane	ajlow	2	:zsh	0	:	0	:/home/ajlow	1	zsh	:
+window	1	0	1	:*	fdc4,93x24,0,0{46x24,0,0,3,46x24,47,0,4}
+window	2	0	1	:*	b622,93x15,0,0,5
+window	3	0	1	:*	b623,93x15,0,0,6
+window	ajlow	0	1	:*	b61e,93x15,0,0,1
+window	ajlow	1	0	:-	5bb0,189x51,0,0,11
+window	ajlow	2	0	:	5bb1,189x51,0,0,12
+state	ajlow	

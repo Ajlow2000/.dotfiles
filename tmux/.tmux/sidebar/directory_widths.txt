@@ -1,0 +1,3 @@
+/home/ajlow/.dotfiles/tmux	94
+/home/ajlow/.dotfiles/tmux	60
+/home/ajlow/.dotfiles/tmux	46
