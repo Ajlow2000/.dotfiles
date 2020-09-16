@@ -206,3 +206,4 @@
 
         " Set colorscheme
     colorscheme nord
+    hi Comment ctermfg=darkgrey
