@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Pull all mods from modded Minecraft server to client
+
+rm $HOME/.minecraft/mods/*
+scp production@home-server:/home/production/minecraft/mc_modded_1-15-2/mods/* $HOME/.minecraft/mods/
