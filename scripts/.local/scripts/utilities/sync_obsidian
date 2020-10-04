@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This script automates the process of syncing my obsidian files with gitlab
+
+gstatus='git status --porcelain'
+
+if [ ${#gstatus} -ne 0 ]; then
+    git -C $HOME/obsidian add --all
+    sleep 10
+    git -C $HOME/obsidian commit -m "Automated sync: $gstatus"
+    sleep 10
+    git -C $HOME/obsidian pull --rebase
+    sleep 10
+    git -C $HOME/obsidian push
+fi
