@@ -5,11 +5,11 @@
 gstatus='git status --porcelain'
 
 if [ ${#gstatus} -ne 0 ]; then
-    git add --all
+    git -C $HOME/obsidian add --all
     sleep 10
-    git commit -m "Automated sync: $gstatus"
+    git -C $HOME/obsidian commit -m "Automated sync: $gstatus"
     sleep 10
-    git pull --rebase
+    git -C $HOME/obsidian pull --rebase
     sleep 10
-    git push
+    git -C $HOME/obsidian push
 fi
