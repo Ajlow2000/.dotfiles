@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script installs the altest version of docker-ce from their repos
+# This script installs the latest version of docker-ce from their repos
 
 # Uninstall old versions/dependencies
 sudo apt-get remove docker docker-engine docker.io
