@@ -20,3 +20,6 @@ PATH="${PATH}$(find ~/.local/scripts/ -name '.*' -prune -o -type d -printf ':%p'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+
+# Created by `userpath` on 2020-11-21 17:45:42
+export PATH="$PATH:/home/wsl/.local/bin"
