@@ -8,6 +8,7 @@
 
     # --- Globals --- #
 WISC_REPOS=( \
+    cs542_SoftwareSecurity \
     cs577_algorithms \
     histsci150_TheDigitalAge \
     engl140_TopicsInEnglishLiterature \
@@ -45,6 +46,7 @@ function clone_via_ssh(){
 function main(){
     mkdir -p $WISC_DIR
     clone_via_ssh
+    #echo "0,30 * * * * wisc_sync" >> /etc/cron.d/wisc_sync_half_hour
 }
 
 main

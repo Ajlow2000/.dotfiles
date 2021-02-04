@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TARGET=$1
+TARGET+=".tex"
+SRC="$HOME/.local/scripts/utilities/deftex_src.txt"
+
+cp $SRC $TARGET

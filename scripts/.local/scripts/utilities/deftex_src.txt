@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{csquotes}
+
+\doublespacing
+
+\title{DEFAULT}
+\author{Alec Lowry}
+
+\begin{document}
+
+\maketitle
+
+\end{document}
