@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$1" == "-e" ]; then
+    nvim $HOME/.local/scripts/utilities/deftex_src.txt
+    exit 0
+fi
+
 TARGET=$1
 TARGET+=".tex"
 SRC="$HOME/.local/scripts/utilities/deftex_src.txt"

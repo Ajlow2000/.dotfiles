@@ -2,7 +2,7 @@
 
     # Terminal
 super + Return
-    $EDITOR
+    $TERMINAL
 
     # Browser
 super + shift + Return
