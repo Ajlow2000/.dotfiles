@@ -1,0 +1,86 @@
+#!/bin/sh
+
+# Handler script for dealing with multimonitors.
+#
+
+INTERNAL="eDP1"
+OPTION=$1
+MONITOR=$2
+DIR=$3
+
+function mirror() {
+    for m in $(xrandr --query | grep '\bconnected\b' | cut -d " " -f1); do
+        if [[ $m -ne $INTERNAL ]]; then
+            xrandr --output $INTERNAL --auto --output $m --same-as $INTERNAL
+        fi
+    done
+}
+
+function extend() {
+    case $DIR in
+        "east")
+            xrandr --output $INTERNAL --auto --output $MONITOR --left-of $INTERNAL
+            break;
+            ;;
+
+        "west")
+            xrandr --output $INTERNAL --auto --output $MONITOR --right-of $INTERNAL
+            break;
+            ;;
+
+        "north")
+            xrandr --output $INTERNAL --auto --output $MONITOR --above $INTERNAL
+            break;
+            ;;
+
+        "south")
+            xrandr --output $INTERNAL --auto --output $MONITOR --below $INTERNAL
+            break;
+            ;;
+
+        *)
+            echo "Improper argument supplied (multimonitor $MONITOR $DIR).  multimonitor extend [monitor] {north,south,east,west}"
+            exit 1
+            ;;
+    esac
+}
+
+function disconnect() {
+    if [[ $MONITOR -eq "" ]]; then
+        for m in $(xrandr --query | grep '\bconnected\b' | cut -d " " -f1); do
+            if [[ $m -ne $INTERNAL ]]; then
+                xrandr --output $INTERNAL --auto --output $m --off
+            fi
+        done
+    fi
+}
+
+
+
+
+function main() {
+    case $OPTION in
+        "mirror")
+            mirror
+            break
+            ;;
+
+        "extend")
+            extend
+            break
+            ;;
+
+        "disconnect")
+            disconnect
+            break
+            ;;
+
+        *)
+            notify-send "Improper option with multimonitor"
+        ;;
+    esac
+    bspc wm -r
+    exit 0
+}
+
+main

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This script automates the process of syncing my obsidian files with gitlab
+
+red=`tput setaf 1`
+reset=`tput sgr0`
+green=`tput setaf 2`
+
+repo_path="$HOME/media_vault"
+
+cd "$repo_path"
+echo -e "\n${green} ------------------ $repo_path ------------------${reset}\n"
+if [ -d .git ] ; then
+    git add .
+    git pull
+    git diff-index --quiet HEAD --
+    if [ "$?" -ne 0 ] ; then
+        echo -e "\n${red}Git Commit${reset}"
+        git commit -a -m "Automated Sync: $USER@$HOSTNAME"
+        echo -e "\n${red}Git Status${reset}"
+        git status
+        echo -e "\n${red}Git Push${reset}"
+        git push
+        echo -e "\n${red}${reset}"
+    fi
+fi
+cd ..

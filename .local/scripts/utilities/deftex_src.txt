@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathptmx}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage{graphicx}
+
+% ----------------------------------------------
+
+\graphicspath{ {./attachments/} }   % \includegraphics[width=\textwidth]{foo.png}
+
+\doublespacing
+
+\title{DEFAULT}
+\author{Alec Lowry}
+
+\begin{document}
+
+\maketitle
+
+\end{document}

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# A generalized previewer
+
+file=$(readlink -f "$1")
+dir=$(dirname "$file")
+base="${file%.*}"
+
+cd "$dir" || exit
+
+case $file in
+    *\.tex) evince $base.pdf ;;
+    *\.py)  $TERMINAL -e python $file ;;
+    *\.java) $TERMINAL -e java $base ;;
+    *)      echo "File type not supported" ;;
+esac
