@@ -1,8 +1,8 @@
-#!/bin/zsh
+#!/bin/bash
 
 # This script attaches / creates a tmux session for the cwd.  Intended as a base configuration to be build and saved on a per session basis
 
-SESSION=$(basename $PWD)
+SESSION=$(basename $PWD | tr -d '.')
 VALID_DEPS=true
 
 function verify_deps() {
