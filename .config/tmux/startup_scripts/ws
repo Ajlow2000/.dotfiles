@@ -1,0 +1,46 @@
+#!/bin/zsh
+
+# This script attaches / creates a tmux session for the cwd.  Intended as a base configuration to be build and saved on a per session basis
+
+SESSION=$(basename $PWD)
+VALID_DEPS=true
+
+function verify_deps() {
+    missingDeps=()
+
+    # Dependency List
+    ranger --version &> /dev/null || VALID_DEPS=false && missingDeps+=("ranger")
+
+    if [ $VALID_DEPS = false ]; then
+        echo "Missing Dependencies:"
+        for dep in "${missingDeps[@]}"; do
+            echo -e "\t-" $dep
+        done
+
+        exit
+    fi
+}
+
+function ws_up() {
+    tmux new-session -d -s $SESSION
+    tmux rename-window -t $SESSION:0 "root"
+    tmux respawn-pane -t $SESSION:0.0 -k "ranger $(pwd)"
+
+        # Attach
+    tmux attach-session -t $SESSION
+}
+
+function main() {
+    verify_deps
+
+    tmux attach-session -t $SESSION
+
+    if [ $? -ne 0 ]; then
+        ws_up
+        echo "Created new session: $SESSION"
+    else
+        echo "Attached to pre-existing $SESSION"
+    fi
+}
+
+main

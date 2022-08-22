@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Checks if a dots tmux session is running and connects, if not, creates one
+
+SESSION="dots"
+VALID_DEPS=true
+
+function verify_deps() {
+    missingDeps=()
+
+    # Dependency List
+    ranger --version &> /dev/null || VALID_DEPS=false && missingDeps+=("ranger")
+
+    if [ $VALID_DEPS = false ]; then
+        echo "Missing Dependencies:"
+        for dep in "${missingDeps[@]}"; do
+            echo -e "\t-" $dep
+        done
+
+        exit
+    fi
+}
+
+function dots_up() {
+    # ----- Create Session ----- #
+    echo "Creating dots session"
+
+    tmux new-session -d -s $SESSION
+
+        # First Window
+    tmux rename-window -t $SESSION:0 "dotfiles"
+    tmux split-pane -h
+    tmux select-pane -t $SESSION:0.0
+    tmux resize-pane -R 30
+    tmux respawn-pane -t $SESSION:0.0 -k "ranger $HOME/"
+    #tmux respawn-pane -t $SESSION:0.1 -k "$SHELL & cd $HOME/.dotfiles/ & git status"
+
+        # Attach
+    tmux select-pane -t $SESSION:"dotfiles".0
+    tmux attach -t $SESSION
+}
+
+function main() {
+    verify_deps
+
+    tmux attach-session -t $SESSION
+
+    if [ $? -ne 0 ]; then
+        dots_up
+        echo "Spun up new dots session"
+    else
+        echo "Attached to preexisting session"
+    fi
+}
+
+#main
+echo "Deprecated due to yadm"
