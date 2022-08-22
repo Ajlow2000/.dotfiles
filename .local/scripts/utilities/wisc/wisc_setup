@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Setup script for pulling all wisc repos
+#
+# OPTIONS
+#   --[ssh]/https     Specify connection type. DEFAULT=ssh
+#
+
+    # --- Globals --- #
+WISC_REPOS=( \
+    cs564_databases \
+    cs570_HCinteraction \
+    engl177_HumansCyborgsAnimals \
+    ansci200_CompanionAnimals \
+    hist170_UniversityInTheWest \
+    anthro102_archaeology \
+    math340_linearalgebra \
+    cs536_compilers \
+    cs540_ai \
+    cs542_SoftwareSecurity \
+    cs577_algorithms \
+    histsci150_TheDigitalAge \
+    engl140_TopicsInEnglishLiterature \
+    gs100_IntroToTheEarthsHistory \
+    cs400_ProgrammingIII \
+    cs300_ProgrammingII \
+    cs200_ProgrammingI \
+    hoofers \
+    kines100_ExerciseScience \
+    math234_CalcIII \
+    ece252_IntroCE \
+    cs354_IntroComputerSystems \
+    cs240_DiscreteMath \
+    anthro104_CulturalAnthro \
+    anthro105_BiologicalAnthro
+)
+
+    # --- Params ---#
+CONNECTION_TYPE="ssh"
+WISC_DIR="$HOME/wisc/"
+
+# TODO - Getopts for changing env vars
+
+function clone_via_ssh(){
+    for repo in ${WISC_REPOS[@]}; do
+        git -C $HOME/wisc/ clone git@gitlab.com:wisc/${repo}.git
+        echo " "
+    done
+}
+
+#function clone_via_http(){
+
+#}
+
+function main(){
+    mkdir -p $WISC_DIR
+    clone_via_ssh
+    #echo "0,30 * * * * wisc_sync" >> /etc/cron.d/wisc_sync_half_hour
+}
+
+main

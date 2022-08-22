@@ -1,0 +1,30 @@
+#!/bin/bash
+
+red=`tput setaf 1`
+reset=`tput sgr0`
+green=`tput setaf 2`
+
+for repo_path in $HOME/wisc/*; do
+    if [ -d "$repo_path" ] ; then
+        shopt -s extglob                # enable +(...) glob syntax
+        repo_name=${repo_path%%+(/)}    # trim however many trailing slashes exist
+        repo_name=${repo_name##*/}      # remove everything before the last / that still remains
+        cd "$repo_path"
+        echo -e "\n${green} ------------------ $repo_name ------------------${reset}\n"
+        if [ -d .git ] ; then
+            git add .
+            git pull
+            git diff-index --quiet HEAD --
+            if [ "$?" -ne 0 ] ; then
+                echo -e "\n${red}Git Commit${reset}"
+                git commit -a -m "Automated Sync: $USER@$HOSTNAME"
+                echo -e "\n${red}Git Status${reset}"
+                git status
+                echo -e "\n${red}Git Push${reset}"
+                git push
+                echo -e "\n${red}${reset}"
+            fi
+        fi
+        cd ..
+    fi
+done

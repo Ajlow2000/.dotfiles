@@ -1,0 +1,18 @@
+#!/bin/sh
+# Script to autolaunch wallpaper
+
+DEFAULT_BG="$HOME/.config/wallpaper/default"
+
+function set_feh() {
+    if [[ -f $HOME/.fehbg ]]; then
+        $HOME/.fehbg
+    else
+        if [[ -f $DEFAULT_BG ]]; then
+            feh --bg-fill $DEFAULT_BG
+        fi
+    fi
+}
+
+if [[ $(command -v feh) ]]; then
+    set_feh
+fi
