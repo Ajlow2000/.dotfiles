@@ -121,8 +121,6 @@ for f in ~/.config/posix/*; do
     source $f
 done
 
-source /home/ajlow/.config/broot/launcher/bash/br
-
 # Created by `userpath` on 2020-11-21 17:45:42
 export PATH="$PATH:/home/wsl/.local/bin"
 
