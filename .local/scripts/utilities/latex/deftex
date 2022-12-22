@@ -7,6 +7,6 @@ fi
 
 TARGET=$1
 TARGET+=".tex"
-SRC="$HOME/.local/scripts/utilities/deftex_src.txt"
+SRC="/home/ajlow/.local/scripts/utilities/latex/deftex_src.txt"
 
 cp $SRC $TARGET
