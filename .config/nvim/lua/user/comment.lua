@@ -4,30 +4,60 @@ if not status_ok then
 end
 
 comment.setup {
-  pre_hook = function(ctx)
-    local U = require "Comment.utils"
+    ---Add a space b/w comment and the line
+    padding = true,
+    ---Whether the cursor should stay at its position
+    sticky = true,
+    ---Lines to be ignored while (un)comment
+    ignore = nil,
+    ---LHS of toggle mappings in NORMAL mode
+    toggler = {
+        ---Line-comment toggle keymap
+        line = 'c',
+        ---Block-comment toggle keymap
+        block = 'bc',
+    },
+    ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+    opleader = {
+        ---Line-comment keymap
+        line = 'c',
+        ---Block-comment keymap
+        block = 'bc',
+    },
+    ---LHS of extra mappings
+    extra = {
+        ---Add comment on the line above
+        above = 'gcO',
+        ---Add comment on the line below
+        below = 'gco',
+        ---Add comment at the end of line
+        eol = 'gcA',
+    },
 
-    local status_utils_ok, utils = pcall(require, "ts_context_commentstring.utils")
-    if not status_utils_ok then
-      return
-    end
+    pre_hook = function(ctx)
+        local U = require "Comment.utils"
 
-    local location = nil
-    if ctx.ctype == U.ctype.block then
-      location = utils.get_cursor_location()
-    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-      location = utils.get_visual_start_location()
-    end
+        local status_utils_ok, utils = pcall(require, "ts_context_commentstring.utils")
+        if not status_utils_ok then
+            return
+        end
 
-    local status_internals_ok, internals = pcall(require, "ts_context_commentstring.internals")
-    if not status_internals_ok then
-      return
-    end
+        local location = nil
+        if ctx.ctype == U.ctype.block then
+            location = utils.get_cursor_location()
+        elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+            location = utils.get_visual_start_location()
+        end
 
-    return internals.calculate_commentstring {
-      key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
-      location = location,
-    }
-  end,
+        local status_internals_ok, internals = pcall(require, "ts_context_commentstring.internals")
+        if not status_internals_ok then
+            return
+        end
+
+        return internals.calculate_commentstring {
+            key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
+            location = location,
+        }
+    end,
 }
 
