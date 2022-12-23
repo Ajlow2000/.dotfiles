@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>pu", ":PackerUpdate<cr>", { desc = "[Packer] - Pack
 vim.keymap.set("n", "<leader>pc", ":PackerCompile<cr>", { desc = "[Packer] - PackerCompile"})
 vim.keymap.set("n", "<leader>psy", ":PackerSync<cr>", { desc = "[Packer] - PackerSync"})
 
--- Install your plugins here
+-- PLUGINS
 return packer.startup(function(use)
     -- TODO - Plugins to look interaction
     -- https://github.com/folke/trouble.nvim

@@ -1,9 +1,9 @@
-function global_keymap(mode, binding, cmd, desc)
+function global_keymap(mode, lhs, rhs, desc)
     local opts = { noremap = true, silent = true, desc = "<uninitialized>"}
     if desc then
         opts.desc = desc
     end
-    vim.keymap.set(mode, binding, cmd, opts)
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 require "user.impatient"
@@ -24,7 +24,7 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.project"
 require "user.indentline"
--- require "user.alpha"
+require "user.alpha"
 require "user.autocommands"
 require "user.todocomments"
 require("leap").add_default_mappings()
