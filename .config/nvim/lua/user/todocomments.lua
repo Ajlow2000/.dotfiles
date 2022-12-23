@@ -3,9 +3,8 @@ if not status_ok then
   return
 end
 
--- Keybinds FIXME - jumping between todo comments is broken
-vim.keymap.set("n", "<C-}>", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
-vim.keymap.set("n", "<C-{>", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
+-- Keybinds
+vim.keymap.set("n", "<leader>st", ":TodoTelescope<cr>", { desc = "[TODO-Comments/Telescope] - View Project TODOs with Telescope" })
 
 todocomments.setup {
     signs = true, -- show icons in the signs column

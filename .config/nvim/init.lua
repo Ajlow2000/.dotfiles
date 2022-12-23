@@ -19,3 +19,4 @@ require "user.indentline"
 -- require "user.alpha"
 require "user.autocommands"
 require "user.todocomments"
+require("leap").add_default_mappings()
