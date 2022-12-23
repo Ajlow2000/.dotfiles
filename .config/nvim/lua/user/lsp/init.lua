@@ -13,7 +13,7 @@ require "user.lsp.null-ls"
         -- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 vim.keymap.set("n", "<leader>l", ":LspInfo<cr>", { desc = "[LSP] - LspInfo"} )
 vim.keymap.set("n", "<leader>lf", ":lua vim.lsp.buf.format{async=true}<cr>", { desc = "[LSP] - Format with LSP"} )
-vim.keymap.set("n", "<leader>lr", ":lua vim.lsp.buf.rename()<cr>", { desc = "[LSP] - Rename with LSP"} )
+vim.keymap.set("n", "<leader>r", ":lua vim.lsp.buf.rename()<cr>", { desc = "[LSP] - Rename with LSP"} )
 vim.keymap.set("n", "<leader>ln", ":lua vim.lsp.diagnostic.goto_next()<cr>", { desc = "[LSP] - Go To Next Diagnostic"} )
 vim.keymap.set("n", "<leader>lp", ":lua vim.lsp.diagnostic.goto_prev()<cr>", { desc = "[LSP] - Go To Previous Diagnostic"} )
 

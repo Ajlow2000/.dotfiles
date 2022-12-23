@@ -20,10 +20,11 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Clear search highlighting
-vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
+-- vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
+global_keymap("n", "<leader>/", ":nohlsearch<cr>", "Clear Search Highlighting")
 
 -- Close Buffer
-vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer" })
+global_keymap("n", "<leader>q", ":Bdelete<cr>", "[vim-bbye] - Close Buffer")
 
     -- c = { "<cmd> lua print 'Have to build compile tool'<cr>", "Compile"},
 -- Auto Compile Tool

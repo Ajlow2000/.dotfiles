@@ -9,9 +9,9 @@ local actions = require "telescope.actions"
 
 -- Keybinds
     -- Searching
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<cr>", { desc = "[Telescope] - Search for files (fuzzyfind)"})
+global_keymap("n", "<leader>f", ":Telescope find_files<cr>", { desc = "[Telescope] - Search for files (fuzzyfind)"})
 vim.keymap.set("n", "<leader>gf", ":Telescope git_files<cr>", { desc = "[Telescope] - Search for git files (fuzzyfind)"})
-vim.keymap.set("n", "<leader>t", ":Telescope live_grep<cr>", { desc = "[Telescope] - Search for text (ripgrep / live_grep)"})
+global_keymap("n", "<leader>t", ":Telescope live_grep<cr>", { desc = "[Telescope] - Search for text (ripgrep / live_grep)"})
 vim.keymap.set("n", "<leader>b", ":Telescope buffers<cr>", { desc = "[Telescope] - Search Open Buffers"})
 vim.keymap.set("n", "<leader>p", ":Telescope projects<cr>", { desc = "[Telescope] - Search Projects"})
 vim.keymap.set("n", "<leader>sk", ":Telescope keymaps<cr>", { desc = "[Telescope] - Search Keymaps"})
