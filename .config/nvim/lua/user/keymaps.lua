@@ -19,6 +19,16 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- Clear search highlighting
+vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
+
+-- Close Buffer
+vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer" })
+
+    -- c = { "<cmd> lua print 'Have to build compile tool'<cr>", "Compile"},
+-- Auto Compile Tool
+vim.keymap.set("n", "<leader>c", ":lua print 'Reminder to build autocompile tool or find plugin'<cr>", { desc = "[vim-bbye] - Close Buffer" })
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

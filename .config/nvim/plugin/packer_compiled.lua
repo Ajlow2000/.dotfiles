@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -139,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/theprimeagen/harpoon"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -148,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -224,15 +229,15 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  ["rust-tools.nvim"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,
@@ -253,11 +258,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
-  },
-  ["which-key.nvim"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

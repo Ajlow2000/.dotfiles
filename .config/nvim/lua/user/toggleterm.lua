@@ -3,6 +3,12 @@ if not status_ok then
 	return
 end
 
+-- Keybinds
+vim.keymap.set("n", "<leader><cr>", ":ToggleTerm direction=float<cr>", { desc = "[ToggleTerm] - Toggle Floating Terminal"})
+vim.keymap.set("n", "<leader><cr>h", ":ToggleTerm size=10 direction=horizontal<cr>", { desc = "[ToggleTerm] - Toggle Horizontal Terminal"})
+vim.keymap.set("n", "<leader><cr>v", ":ToggleTerm size=60 direction=vertical<cr>", { desc = "[ToggleTerm] - Toggle Vertical Terminal"})
+vim.keymap.set("n", "<leader><cr>p", ":lua _PYTHON_TOGGLE()<cr>", { desc = "[ToggleTerm] - Toggle Python Interpreter in Floating Terminal"})
+
 toggleterm.setup({
 	size = 20,
 	open_mapping = [[<c-\>]],

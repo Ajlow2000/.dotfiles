@@ -8,6 +8,10 @@ if not config_status_ok then
   return
 end
 
+-- Keymaps
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "Toggle Nvim Tree"})
+--
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {

@@ -1,6 +1,6 @@
 local servers = {
     "gopls",
-    "rust-analyzer",
+    -- "rust-analyzer",
     "texlab",
 	"sumneko_lua",
 	"pyright",
