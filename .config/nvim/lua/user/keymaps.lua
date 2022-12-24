@@ -11,7 +11,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
 vim.keymap.set("n", "Q", "<nop>", { desc = "'Worst place in the universe' -ThePrimeagen"})
 
 vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" } )
@@ -46,7 +45,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>",{ desc = "Resize spli
 vim.keymap.set("n", "<S-l>", ":bnext<CR>",{ desc = "Cycle forwards through buffers" } )
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>",{ desc = "Cycle backwards through buffers" } )
 
--- Visual --
 vim.keymap.set("v", ">", ">gv",{ desc = "Increment Indentation of visual selection" } )
 vim.keymap.set("v", "<", "<gv",{ desc = "Decrement Indentation of visual selection" } )
 
