@@ -12,18 +12,32 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
-vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
+vim.keymap.set("n", "Q", "<nop>", { desc = "'Worst place in the universe' -ThePrimeagen"})
 
-vim.keymap.set("v", "<leader>p", '"_dP', { desc = "Paste from system clipboard" } )
+vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" } )
 
-vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer"})
+vim.keymap.set("n", "<leader>rw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Start replacing all instances of word under cursor within file"} )
 
-vim.keymap.set("n", "<C-h>", "<C-w>h",{ desc = "Cursor to left split" } )
-vim.keymap.set("n", "<C-j>", "<C-w>j",{ desc = "Cursor to bottom split" } )
-vim.keymap.set("n", "<C-k>", "<C-w>k",{ desc = "Cursor to top split" } )
-vim.keymap.set("n", "<C-l>", "<C-w>l",{ desc = "Cursor to right split" } )
+vim.keymap.set("n", "<leader>p", '"_dP', { desc = "Paste over visual selection without recoping the deleted selection" } )
 
--- Resize with arrows
+vim.keymap.set( {"n", "v"}, "<leader>y", "\"+y", { desc = "Yank to system clipboard"} )
+vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Yank to system clipboard"} )
+
+vim.keymap.set( {"n", "v"}, "<leader>d", '\"_d', { desc = "Delete to void register"} )
+
+vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer"} )
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump down half page with cursor centered"} )
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump up half page with cursor centered"} )
+
+vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result with cursor centerd"} )
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result with cursor centerd"} )
+
+-- vim.keymap.set("n", "<C-h>", "<C-w>h",{ desc = "Cursor to left split" } )
+-- vim.keymap.set("n", "<C-j>", "<C-w>j",{ desc = "Cursor to bottom split" } )
+-- vim.keymap.set("n", "<C-k>", "<C-w>k",{ desc = "Cursor to top split" } )
+-- vim.keymap.set("n", "<C-l>", "<C-w>l",{ desc = "Cursor to right split" } )
+
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>",{ desc = "Resize split vertically (larger)" } )
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>",{ desc = "Resize split vertically (smaller)" } )
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>",{ desc = "Resize split horizontally (smaller)" } )
