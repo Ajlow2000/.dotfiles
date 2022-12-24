@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
   gruvbox = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -154,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
   },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -173,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -253,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
   }
 }
 

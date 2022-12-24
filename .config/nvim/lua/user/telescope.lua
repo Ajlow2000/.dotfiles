@@ -9,9 +9,9 @@ local actions = require "telescope.actions"
 
 -- Keybinds
     -- Searching
-global_keymap("n", "<leader>f", ":Telescope find_files<cr>", { desc = "[Telescope] - Search for files (fuzzyfind)"})
+vim.keymap.set("n", "<leader>f", ":Telescope find_files<cr>", { desc = "[Telescope] - Search for files (fuzzyfind)"})
 vim.keymap.set("n", "<leader>gf", ":Telescope git_files<cr>", { desc = "[Telescope] - Search for git files (fuzzyfind)"})
-global_keymap("n", "<leader>t", ":Telescope live_grep<cr>", { desc = "[Telescope] - Search for text (ripgrep / live_grep)"})
+vim.keymap.set("n", "<leader>t", ":Telescope live_grep<cr>", { desc = "[Telescope] - Search for text (ripgrep / live_grep)"})
 vim.keymap.set("n", "<leader>b", ":Telescope buffers<cr>", { desc = "[Telescope] - Search Open Buffers"})
 vim.keymap.set("n", "<leader>p", ":Telescope projects<cr>", { desc = "[Telescope] - Search Projects"})
 vim.keymap.set("n", "<leader>sk", ":Telescope keymaps<cr>", { desc = "[Telescope] - Search Keymaps"})
@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>sm", ":Telescope man_pages<cr>", { desc = "[Telesco
 vim.keymap.set("n", "<leader>sc", ":Telescope commands<cr>", { desc = "[Telescope] - Search Vim Commands"})
 vim.keymap.set("n", "<leader>sr", ":Telescope registers<cr>", { desc = "[Telescope] - Search Registers"})
 vim.keymap.set("n", "<leader>sh", ":Telescope help_tags<cr>", { desc = "[Telescope] - Search Help Tags"})
-vim.keymap.set("n", "kasdf", ":Telescope oldfiles<cr>", { desc = "[Telescope] - Search Search Recent Files"})
+-- vim.keymap.set("n", "", ":Telescope oldfiles<cr>", { desc = "[Telescope] - Search Search Recent Files"})
 
     -- Colorscheme TODO - add color preview like lvim
 vim.keymap.set("n", "<leader>vc", ":Telescope colorscheme<cr>", { desc = "[Telescope] - Browse Colorschemes"})

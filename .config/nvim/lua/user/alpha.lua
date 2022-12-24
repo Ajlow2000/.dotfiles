@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+global_keymap("n", "<leader>a", ":Alpha", "[Alpha] - Launch Dashboard")
+
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
     [[             //                 /*             ]],

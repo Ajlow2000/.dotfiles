@@ -1,12 +1,5 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+vim.keymap.set("", "<Space>", "<Nop>", { desc = "Nop on space since I use it as leader"})
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -19,60 +12,36 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Clear search highlighting
--- vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
-global_keymap("n", "<leader>/", ":nohlsearch<cr>", "Clear Search Highlighting")
+vim.keymap.set("n", "<leader>/", ":nohlsearch<cr>", { desc = "Clear Search Highlighting" })
 
--- Close Buffer
-global_keymap("n", "<leader>q", ":Bdelete<cr>", "[vim-bbye] - Close Buffer")
+vim.keymap.set("v", "<leader>p", '"_dP', { desc = "Paste from system clipboard" } )
 
-    -- c = { "<cmd> lua print 'Have to build compile tool'<cr>", "Compile"},
--- Auto Compile Tool
-vim.keymap.set("n", "<leader>c", ":lua print 'Reminder to build autocompile tool or find plugin'<cr>", { desc = "[vim-bbye] - Close Buffer" })
+vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer"})
 
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h",{ desc = "Cursor to left split" } )
+vim.keymap.set("n", "<C-j>", "<C-w>j",{ desc = "Cursor to bottom split" } )
+vim.keymap.set("n", "<C-k>", "<C-w>k",{ desc = "Cursor to top split" } )
+vim.keymap.set("n", "<C-l>", "<C-w>l",{ desc = "Cursor to right split" } )
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>",{ desc = "Resize split vertically (larger)" } )
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>",{ desc = "Resize split vertically (smaller)" } )
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>",{ desc = "Resize split horizontally (smaller)" } )
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>",{ desc = "Resize split horizontally (larger)" } )
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+vim.keymap.set("n", "<S-l>", ":bnext<CR>",{ desc = "Cycle forwards through buffers" } )
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>",{ desc = "Cycle backwards through buffers" } )
 
 -- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", ">", ">gv",{ desc = "Increment Indentation of visual selection" } )
+vim.keymap.set("v", "<", "<gv",{ desc = "Decrement Indentation of visual selection" } )
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move visual selection down (with auto indent)"} )
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move visual selection down (with auto indent)"} )
 
 -- Terminal --
+-- local term_opts = { silent = true }
+
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
