@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-global_keymap("n", "<leader>a", ":Alpha", "[Alpha] - Launch Dashboard")
+vim.keymap.set("n", "<leader>a", ":Alpha", { desc = "[Alpha] - Launch Dashboard"} )
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
@@ -38,7 +38,7 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
--- NOTE: requires the fortune-mod package to work
+-- requires the fortune-mod package to work
 	-- local handle = io.popen("fortune")
 	-- local fortune = handle:read("*a")
 	-- handle:close()

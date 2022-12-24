@@ -4,13 +4,13 @@ if not status_ok then
 end
 
 -- Keymaps
-global_keymap("n", "<leader>i", ":lua vim.lsp.buf.hover()<cr>", "[LSP] - Show Popup Info" )
+vim.keymap.set("n", "<leader>i", ":lua vim.lsp.buf.hover()<cr>", { desc = "[LSP] - Show Popup Info"} )
 
-global_keymap("n", "<leader>l", ":LspInfo<cr>", "[LSP] - LspInfo" )
-global_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format{async=true}<cr>", "[LSP] - Format with LSP" )
-global_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<cr>", "[LSP] - Rename with LSP" )
-global_keymap("n", "<leader>ln", ":lua vim.lsp.diagnostic.goto_next()<cr>", "[LSP] - Go To Next Diagnostic" )
-global_keymap("n", "<leader>lp", ":lua vim.lsp.diagnostic.goto_prev()<cr>", "[LSP] - Go To Previous Diagnostic" )
+vim.keymap.set("n", "<leader>l", ":LspInfo<cr>", { desc = "[LSP] - LspInfo" } )
+vim.keymap.set("n", "<leader>lf", ":lua vim.lsp.buf.format{async=true}<cr>", { desc = "[LSP] - Format with LSP"} )
+vim.keymap.set("n", "<leader>lr", ":lua vim.lsp.buf.rename()<cr>", { desc = "[LSP] - Rename with LSP"} )
+vim.keymap.set("n", "<leader>ln", ":lua vim.lsp.diagnostic.goto_next()<cr>", { desc = "[LSP] - Go To Next Diagnostic"} )
+vim.keymap.set("n", "<leader>lp", ":lua vim.lsp.diagnostic.goto_prev()<cr>", { desc = "[LSP] - Go To Previous Diagnostic"} )
 
 lsp.preset('recommended')
 lsp.ensure_installed({

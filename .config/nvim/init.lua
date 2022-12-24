@@ -1,17 +1,9 @@
-function global_keymap(mode, lhs, rhs, desc)
-    local opts = { noremap = true, silent = true, desc = "<uninitialized>"}
-    if desc then
-        opts.desc = desc
-    end
-    vim.keymap.set(mode, lhs, rhs, opts)
-end
-
-require "user.impatient"
 require "user.colorscheme"
 require "user.options"
 require "user.keymaps"
 
 require "user.plugins"
+require "user.impatient"
 require "user.telescope"
 require "user.treesitter"
 require("user.lsp-zero")
