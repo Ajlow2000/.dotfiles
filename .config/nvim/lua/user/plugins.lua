@@ -41,7 +41,7 @@ packer.init({
 -- Set Keymaps
 vim.keymap.set("n", "<leader>ps", ":PackerStatus<cr>", { desc = "[Packer] - PackerStatus"})
 
--- PLUGINS
+-- PLUGINS HERE
 return packer.startup(function(use)
     -- TODO - Plugins to look interaction
 
@@ -51,13 +51,15 @@ return packer.startup(function(use)
     -- "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     -- "RRethy/vim-illuminate"
     -- "lewis6991/gitsigns.nvim"
+    -- undotree
 
         -- Essentials
     use { "wbthomason/packer.nvim" } -- Have packer manage itself
     use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
     use { "lewis6991/impatient.nvim" }
     use { "nvim-telescope/telescope.nvim" }
-    use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" } -- latest is breaking for my 0.8.1
+    use { "nvim-treesitter/nvim-treesitter" }
+    -- use { "nvim-treesitter/nvim-tree-docs" }
 
         -- Dead easy lsp setup
     use {

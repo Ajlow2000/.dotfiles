@@ -12,7 +12,7 @@ require("user.lsp-zero")
 require "user.autopairs"
 require "user.comment"
 require "user.nvim-tree"
-require "user.bufferline"
+-- require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
 require "user.project"
@@ -21,3 +21,4 @@ require "user.alpha"
 require "user.autocommands"
 require "user.todocomments"
 require("leap").add_default_mappings()
+require("user.harpoon")

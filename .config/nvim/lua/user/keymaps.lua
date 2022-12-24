@@ -10,9 +10,7 @@ vim.g.maplocalleader = " "
 --   visual_mode = "v",
 --   visual_block_mode = "x",
 --   term_mode = "t",
---   visual_block_mode = "x",
 --   command_mode = "c",
-
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "'Worst place in the universe' -ThePrimeagen"})
 
@@ -25,6 +23,7 @@ vim.keymap.set("n", "<leader>po", '"_dP', { desc = "Paste over visual selection 
 vim.keymap.set( {"n", "v"}, "<leader>y", '\"+y', { desc = "Yank to system clipboard"} )
 vim.keymap.set("n", "<leader>Y", '\"+Y', { desc = "Yank to system clipboard"} )
 vim.keymap.set("n", "<leader>p", '"+gp', { desc = "Paste from system clipboard"} )
+
 
 vim.keymap.set( {"n", "v"}, "<leader>d", '\"_d', { desc = "Delete to void register"} )
 
