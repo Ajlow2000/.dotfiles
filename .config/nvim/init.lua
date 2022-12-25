@@ -1,6 +1,7 @@
 require "user.colorscheme"
 require "user.options"
 require "user.keymaps"
+require("user.which-key")
 
 require "user.plugins"
 require "user.impatient"

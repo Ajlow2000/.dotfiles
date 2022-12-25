@@ -47,7 +47,6 @@ return packer.startup(function(use)
 
     -- folke/trouble.nvim
     -- 'mfussenegger/nvim-dap'
-    -- 'simrat39/rust-tools.nvim'
     -- "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     -- "RRethy/vim-illuminate"
     -- "lewis6991/gitsigns.nvim"
@@ -81,6 +80,9 @@ return packer.startup(function(use)
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
+
+            -- Language specific
+            {'simrat39/rust-tools.nvim'}
         }
     }
     
@@ -88,6 +90,7 @@ return packer.startup(function(use)
     use { "nvim-lualine/lualine.nvim" }
     use { "akinsho/bufferline.nvim" }
     use { "goolord/alpha-nvim" }
+    use { "folke/which-key.nvim" }
 
         -- Colorschemes
     use { "shaunsingh/nord.nvim" }

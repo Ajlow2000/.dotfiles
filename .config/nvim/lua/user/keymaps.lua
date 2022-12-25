@@ -20,12 +20,12 @@ vim.keymap.set("n", "<leader>rw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left
 
 vim.keymap.set("n", "<leader>po", '"_dP', { desc = "Paste over visual selection without recoping the deleted selection" } )
 
-vim.keymap.set( {"n", "v"}, "<leader>y", '\"+y', { desc = "Yank to system clipboard"} )
-vim.keymap.set("n", "<leader>Y", '\"+Y', { desc = "Yank to system clipboard"} )
-vim.keymap.set("n", "<leader>p", '"+gp', { desc = "Paste from system clipboard"} )
+vim.keymap.set( {"n", "v"}, "<leader>sy", '\"+y', { desc = "Yank to system clipboard"} )
+vim.keymap.set("n", "<leader>sY", '\"+Y', { desc = "Yank to system clipboard"} )
+vim.keymap.set("n", "<leader>sp", '"+gp', { desc = "Paste from system clipboard"} )
 
 
-vim.keymap.set( {"n", "v"}, "<leader>d", '\"_d', { desc = "Delete to void register"} )
+-- vim.keymap.set( {"n", "v"}, "<leader>d", '\"_d', { desc = "Delete to void register"} )
 
 vim.keymap.set("n", "<leader>q", ":Bdelete<cr>", { desc = "[vim-bbye] - Close Buffer"} )
 vim.keymap.set("n", "<S-l>", ":bnext<CR>",{ desc = "Cycle forwards through buffers" } )

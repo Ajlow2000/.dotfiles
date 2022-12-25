@@ -4,12 +4,14 @@ if not status_ok then
 end
 
 rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      -- vim.keymap.set("n", "<leader>w", rt.hover_actions.hover_actions, { buffer = bufnr, desc = "[Rust-Tools] - Hover actions" })
-      -- Code action groups
-      -- vim.keymap.set("n", "<leader>a", rt.code_action_group.code_action_group, { buffer = bufnr, desc = "[Rust-Tools] - Code Action Groups" })
-    end,
-  },
+    server = {
+        on_attach = function(_, bufnr)
+            rt.inlay_hints.set()
+
+            vim.keymap.set("n", "<leader>ri", rt.inlay_hints.toggle, { buffer = bufnr, desc = "[Rust-Tools] - Toggle Inlay Hints" })
+
+            -- vim.keymap.set("n", "rh", rt. , { buffer = bufnr, desc = "[Rust-Tools] - Hover actions" })
+            -- vim.keymap.set("n", "<leader>a", rt.code_action_group.code_action_group, { buffer = bufnr, desc = "[Rust-Tools] - Code Action Groups" })
+        end,
+    },
 })
