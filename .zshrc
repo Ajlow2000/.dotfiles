@@ -25,11 +25,6 @@ zstyle ':vcs_info:*' enable git
 # ----- Source Extensions----- #
 ZSH_CONFIG_HOME=$HOME"/.config/zsh"
 
-    # Custom Shortcuts
-for f in ~/.config/posix/*; do
-    source $f
-done
-
     # ZSH Syntax - Depends on .config/zsh/zsh-syntax-highlighting
 source $ZSH_CONFIG_HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -76,20 +71,9 @@ PROMPT="%{$fg[green]%}[%{$fg[blue]%}%n@%{$fg[blue]%}%m %{$fg[green]%}%~] %{$rese
 
     # Right Prompt
 RPROMPT='%? $(git_super_status)'
+# ------------------ #
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ajlow/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/ajlow/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ajlow/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ajlow/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-export PATH=/home/ajlow/.local/bin:$PATH
+eval "$(zoxide init zsh)"
+
+source ~/.profile

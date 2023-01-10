@@ -1,6 +1,0 @@
-# Neovim
-
-## TODOs
-
-colorscheme preview
-
