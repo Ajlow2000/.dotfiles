@@ -44,8 +44,7 @@ alias banner="e ~/.local/cache/BANNER"
 PATH="${PATH}$(find ~/.local/bin/ -name '.*' -prune -o -type d -printf ':%p')"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin/
 . "$HOME/.cargo/env"
 
 
