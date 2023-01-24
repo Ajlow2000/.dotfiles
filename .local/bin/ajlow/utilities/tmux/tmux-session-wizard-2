@@ -107,7 +107,6 @@ function get_session() {
         # RESULT is a path and needs a session created
         SESSION=$(basename $RESULT | tr . _)
         if ! tmux has-session -t=$SESSION 2> /dev/null; then
-            echo $SESSION > ~/output.txt
             case "$SESSION" in
                 "_config") build_dots_session
                 ;;

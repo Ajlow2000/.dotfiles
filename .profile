@@ -2,6 +2,8 @@
 # ----- Runtime Env ----- #
 TERM=xterm-256color
 
+# ----- Kitty Term ----- #
+alias icat="kitty +kitten icat"
 
     # Terminal Banner
 export BANNER="$HOME/.local/cache/BANNER"
@@ -13,7 +15,7 @@ alias e=$(which nvim)
     # Git Shortcuts
 alias gs="git status"
 alias gcm="git commit -m"
-alias ga="git add -u"
+alias ga="git add"
 
     # Some gerneral settings
 alias ls="ls --group-directories-first --color"
