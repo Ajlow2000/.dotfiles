@@ -61,6 +61,8 @@ return packer.startup(function(use)
     use { "chrisbra/Colorizer" }
     use { "christoomey/vim-tmux-navigator" }
     use { "folke/which-key.nvim" }
+    use { "stevearc/oil.nvim" }
+    use { "RaafatTurki/hex.nvim", config = function() require("hex").setup() end}
 
     -- Lsp 
     use {

@@ -134,6 +134,12 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["hex.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bhex\frequire\0" },
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/hex.nvim",
+    url = "https://github.com/RaafatTurki/hex.nvim"
+  },
   ["leap.nvim"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/leap.nvim",
@@ -204,6 +210,11 @@ _G.packer_plugins = {
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/ajlow/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -267,6 +278,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: hex.nvim
+time([[Config for hex.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bhex\frequire\0", "config", "hex.nvim")
+time([[Config for hex.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

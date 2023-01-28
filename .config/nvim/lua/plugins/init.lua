@@ -13,6 +13,7 @@ local requirements = {
     "plugins.leap",
     "plugins.harpoon",
     "plugins.dap",
+    "plugins.oil",
 }
 
 for i = 1, #requirements, 1 do
