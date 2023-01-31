@@ -1,6 +1,7 @@
 
 # ----- Runtime Env ----- #
 TERM=xterm-256color
+FCEDIT=nvim
 
 # ----- Kitty Term ----- #
 alias icat="kitty +kitten icat"
@@ -9,7 +10,7 @@ alias icat="kitty +kitten icat"
 export BANNER="$HOME/.local/cache/BANNER"
 
 # ----- Aliases ----- #
-alias t="tmux-session-wizard-2"
+alias p="tmux-session-wizard"
 alias e=$(which nvim)
 
     # Git Shortcuts

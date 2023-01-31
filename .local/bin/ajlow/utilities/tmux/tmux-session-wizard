@@ -9,37 +9,129 @@ __fzfcmd() {
 }
 
 # Parse optional argument
-if [ "$1" ]; then
-  # Argument is given
-  eval "$(zoxide init bash)"
-  RESULT=$(z $@ && pwd)
-else
-  # No argument is given. Use FZF
-  RESULT=$((tmux list-sessions -F "#{session_name}: #{session_windows} window(s)\
-#{?session_grouped, (group ,}#{session_group}#{?session_grouped,),}\
-#{?session_attached, (attached),}"; zoxide query -l) | $(__fzfcmd) --reverse)
-  if [ -z "$RESULT" ]; then
-    exit 0
-  fi
-fi
+function parse_args() {
+    if [ "$1" ]; then
+        # Argument is given
+        eval "$(zoxide init bash)"
+        RESULT=$(z $@ && pwd)
+    else
+      RESULT=$((tmux list-sessions -F "#{session_name}: #{session_windows} window(s)\
+    #{?session_grouped, (group ,}#{session_group}#{?session_grouped,),}\
+    #{?session_attached, (attached),}"; zoxide query -l) | $(__fzfcmd) --reverse)
+        # # No argument is given. Use FZF
+        # RESULT=$((tmux list-sessions -F "\#{session_name}: #{session_windows} window(s)\
+        #     #{?session_grouped, (group ,}\
+        #     ##{session_group}#{?session_grouped,),}\
+        #     #{?session_attached, (attached),}"; \
+        #     zoxide query -l) | $(__fzfcmd) --reverse)
+        if [ -z "$RESULT" ]; then
+            exit 0
+        fi
+    fi
+}
 
-# Get or create session
-if [[ $RESULT == *":"* ]]; then
-  # RESULT comes from list-sessions
-  SESSION=$(echo $RESULT | awk '{print $1}')
-  SESSION=${SESSION//:/}
-else
-  # RESULT is a path
-  SESSION=$(basename $RESULT | tr . _)
-  if ! tmux has-session -t=$SESSION 2> /dev/null; then
+function verify_deps() {
+    missingDeps=()
+
+    # Dependency List
+    ranger --version &> /dev/null || VALID_DEPS=false && missingDeps+=("ranger")
+
+    if [ $VALID_DEPS = false ]; then
+        echo "Missing Dependencies:"
+        for dep in "${missingDeps[@]}"; do
+            echo -e "\t-" $dep
+        done
+    fi
+}
+
+function build_default_session() {
+    local gitcheck=$(git -C $RESULT rev-parse --is-inside-work-tree)
+    if [ $gitcheck == "true" ]; then
+        build_dev_session
+    else
+        tmux new-session -d -s $SESSION -c $RESULT
+        tmux rename-window -t $SESSION:0 "term"
+
+        tmux select-pane -t $SESSION:0
+    fi
+}
+
+function build_dev_session() {
     tmux new-session -d -s $SESSION -c $RESULT
-  fi
-fi
+    tmux rename-window -t $SESSION:0 "term"
 
-# Attach to session
-if [ -z "$TMUX" ]; then
-  tmux attach -t $SESSION
-else
-  tmux switch-client -t $SESSION
-fi
+    tmux new-window -d -t $SESSION:1 \
+        -c $RESULT \
+        -n "nvim"
+    tmux send-keys -t $SESSION:1 "nvim -c 'Telescope find_files'" Enter
 
+    tmux new-window -d -t $SESSION:9 \
+        -c $RESULT \
+        -n "lazygit"
+    tmux send-keys -t $SESSION:9 "lazygit" Enter
+
+    tmux select-pane -t $SESSION:1
+}
+
+function build_dots_session() {
+    SESSION="dotfiles"
+    tmux new-session -d -s $SESSION -c $HOME
+
+    tmux rename-window -t $SESSION:0 "term"
+
+    tmux new-window -d -t $SESSION:1 \
+        -c $HOME/.config/nvim/ \
+        -n "nvim"
+    tmux send-keys -t $SESSION:1 "nvim -c 'Telescope find_files'" Enter
+
+    tmux new-window -d -t $SESSION:2 \
+        -c $HOME/.config/tmux/ \
+        -n "tmux"
+    tmux send-keys -t $SESSION:2 "nvim tmux.conf" Enter
+
+    # TODO - find yadm git dir
+    # tmux new-window -d -t $SESSION:9 \
+    #     -c $HOME/.config/tmux/ \
+    #     -n "tmux"
+    # tmux send-keys -t $SESSION:9 "lazygit" Enter
+
+    tmux select-pane -t $SESSION:0.0
+}
+
+function get_session() {
+    if [[ $RESULT == *":"* ]]; then
+        # RESULT comes from list-sessions
+        SESSION=$(echo $RESULT | awk '{print $1}')
+        SESSION=${SESSION//:/}
+    else
+        # RESULT is a path and needs a session created
+        SESSION=$(basename $RESULT | tr . _)
+        if ! tmux has-session -t=$SESSION 2> /dev/null; then
+            case "$SESSION" in
+                "_config") build_dots_session
+                ;;
+                *) build_default_session
+                ;;
+            esac
+        fi
+    fi
+}
+
+function attach_session() {
+    # Attach to session
+    if [ -z "$TMUX" ]; then
+        tmux attach -t $SESSION
+    else
+        tmux switch-client -t $SESSION
+    fi
+}
+
+main() {
+    VALID_DEPS=true
+
+    parse_args
+    get_session
+    attach_session 
+}
+
+main
