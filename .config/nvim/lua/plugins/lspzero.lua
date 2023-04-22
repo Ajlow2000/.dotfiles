@@ -7,11 +7,6 @@ end
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    "sumneko_lua",
-    "rust_analyzer",
-    "clangd",
-    "pyright",
-    "texlab",
 })
 
 lsp.nvim_workspace()

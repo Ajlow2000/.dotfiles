@@ -1,7 +1,9 @@
-
 # ----- Runtime Env ----- #
 TERM=xterm-256color
 FCEDIT=nvim
+
+# ----- WSL Disable highlighting directories ----- #
+export LS_COLORS=$LS_COLORS:'ow=1;34:';
 
 # ----- Kitty Term ----- #
 alias icat="kitty +kitten icat"

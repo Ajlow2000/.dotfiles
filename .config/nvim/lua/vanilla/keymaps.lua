@@ -6,6 +6,20 @@ vim.g.maplocalleader = " "
 vim.g.tmux_navigator_no_mappings = 1
 
 vim.keymap.set(
+    "n",
+    "<C-l>",
+    "20zl",
+    { silent = false, desc = "Horizontal Scroll"}
+)
+
+vim.keymap.set(
+    "n",
+    "<C-h>",
+    "20zh",
+    { silent = false, desc = "Horizontal Scroll"}
+)
+
+vim.keymap.set(
     "n", 
     "<A-h>",
     ":TmuxNavigateLeft<cr>", 

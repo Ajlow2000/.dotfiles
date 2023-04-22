@@ -14,6 +14,7 @@ local requirements = {
     "plugins.harpoon",
     "plugins.dap",
     "plugins.oil",
+    "plugins.luasnip"
 }
 
 for i = 1, #requirements, 1 do
